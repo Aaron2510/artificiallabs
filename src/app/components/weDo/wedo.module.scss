@@ -1,0 +1,106 @@
+.imageGrid {
+    padding: 0 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    figure {
+        width: 250px;
+        height: 400px;
+        cursor: pointer;
+        margin-bottom: 2rem;
+        border-radius: 1rem;
+        background-size: contain;
+        background-repeat: round;
+        transition: transform 0.5s ease-in-out, background-image 0.5s ease-in-out;
+
+        &.gridOne {
+            background-image: url("/brand_work.png");
+
+            &:hover {
+                font-size: 25px;
+                font-weight: 600;
+                transform: scale(1.2);
+                background-image: url("/brand_gradient_work.png");
+
+                @media (max-width: 1199.98px) {
+                    transform: scale(1.07);
+                }
+            }
+        }
+
+        &.gridTwo {
+            background-image: url("/social_media_work.png");
+
+            &:hover {
+                font-size: 25px;
+                font-weight: 600;
+                transform: scale(1.2);
+                background-image: url("/social_media_gradient_work.png");
+
+                @media (max-width: 1199.98px) {
+                    transform: scale(1.07);
+                }
+            }
+        }
+
+        &.gridThree {
+            background-image: url("/music_work.png");
+
+            &:hover {
+                font-size: 25px;
+                font-weight: 600;
+                transform: scale(1.2);
+                background-image: url("/music_gradient_work.png");
+
+                @media (max-width: 1199.98px) {
+                    transform: scale(1.07);
+                }
+            }
+        }
+    }
+}
+
+.modalThree {
+    .insideContent {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        @media (max-width: 767.98px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        img {
+            flex: none;
+        }
+    }
+
+    .audioWrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+
+        @media (max-width: 767.98px) {
+            flex-direction: column;
+            align-items: flex-start;
+
+            audio {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.modalTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    .btnClose {
+        color: white;
+    }
+}

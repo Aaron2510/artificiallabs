@@ -1,0 +1,98 @@
+@import './lib/mixins';
+
+.home {
+    position: relative;
+    .section2 {
+        padding-block: 10rem;
+        min-height: auto;
+    }
+
+    .section3 {
+        min-height: auto;
+        >div {
+            position: relative;
+        }
+    }
+
+    .section4 {
+        padding: 10rem 0;
+        h2 {
+            line-height: 3rem;
+            letter-spacing: 0.5px;
+            font-size: calc(1.325rem + .9vw);
+        }
+    }
+
+    .section5 {
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: relative;
+
+        >img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            filter: blur(25px);
+        }
+
+        >div {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            margin-bottom: 3rem;
+        }
+
+    }
+
+    .section7 {
+        min-height: auto;
+        h1 {
+            margin-bottom: 5rem;
+        }
+    }
+
+    .section8 {
+        min-height: auto;
+        .socialMenu {
+            gap: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a {
+                width: 60px;
+                height: 60px;
+                color: black;
+                display: block;
+                transition: 0.6s;
+                font-size: 30px;
+                line-height: 60px;
+                text-align: center;
+                border-radius: 50%;
+                background-color: #fff;
+                box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
+
+                &:hover {
+                    color: #fff;
+                    transform: translate(0, -10%);
+
+                    &:nth-child(1) {
+                        background-color: #ff0000;
+                    }
+
+                    &:nth-child(2) {
+                        background-color: #bc2a8d;
+                    }
+
+                    &:nth-child(3) {
+                        background-color: #0077b5;
+                    }
+                }
+            }
+        }
+    }
+}
