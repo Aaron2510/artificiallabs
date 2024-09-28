@@ -60,10 +60,13 @@ const MinframeAnime = () => {
                                 gsap.to(pLogoRef.current, {
                                     width: "100px",
                                     top: "12px",
-                                    left: "250px",
+                                    left: "210px",
                                     transform: "translate(0, 0)",
                                     ease: "power2.inOut",
                                 });
+
+                                // Start playing pLogoRef video only after the pLogoRef animation completes
+                                pLogoRef.current.play();
 
                                 // Start playing locationCardsRef video only after the logo animation completes
                                 locationCardsRef.current.play();
