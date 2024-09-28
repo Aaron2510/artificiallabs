@@ -1,8 +1,7 @@
 "use client";
 
 /* eslint-disable react/no-unescaped-entities */
-import Link from 'next/link';
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import Image from 'next/image';
@@ -31,6 +30,17 @@ const Header = () => {
 
   // Toggle menu
   const handleClick = () => setMenu((prev) => !prev);
+
+  // Scroll to section function
+  const handleScroll = (e: React.MouseEvent, sectionId: string) => {
+    e.preventDefault(); // Prevent default link behavior
+
+    const section = document.querySelector(sectionId); // Find the section by ID
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' }); // Scroll to the section
+    }
+    setMenu(false); // Optionally close the menu if needed
+  };
 
   // GSAP effect to hide/show the logo on scroll
   useGSAP(() => {
@@ -115,21 +125,11 @@ const Header = () => {
           </div>
           {isMenu && (
             <Nav className={styles.navbar} ref={navLinksRef}>
-              <Link href='/' onClick={handleClick}>
-                Home
-              </Link>
-              <Link href='#what-we-do' onClick={handleClick}>
-                Our Work
-              </Link>
-              <Link href='#meet-our-team' onClick={handleClick}>
-                Our Team
-              </Link>
-              <Link href='#our-clients' onClick={handleClick}>
-                Clients
-              </Link>
-              <Link href='#contact-us' onClick={handleClick}>
-                Contact Us
-              </Link>
+              <a href='#mainframe' onClick={(e) => handleScroll(e, '#mainframe')}>Home</a>
+              <a href='#what-we-do' onClick={(e) => handleScroll(e, '#what-we-do')}>Our Work</a>
+              <a href='#meet-our-team' onClick={(e) => handleScroll(e, '#meet-our-team')}>Our Team</a>
+              <a href='#our-clients' onClick={(e) => handleScroll(e, '#our-clients')}>Clients</a>
+              <a href='#contact-us' onClick={(e) => handleScroll(e, '#contact-us')}>Contact Us</a>
             </Nav>
           )}
         </Container>
@@ -137,11 +137,11 @@ const Header = () => {
         <Navbar expand='lg' className={styles.navbarWrap}>
           <Container className={styles.container}>
             <Nav className={styles.navbar}>
-              <Link href='/'>Home</Link>
-              <Link href='#what-we-do'>Our Work</Link>
-              <Link href='#meet-our-team'>Our Team</Link>
-              <Link href='#our-clients'>Clients</Link>
-              <Link href='#contact-us'>Contact Us</Link>
+              <a href='#mainframe' onClick={(e) => handleScroll(e, '#mainframe')}>Home</a>
+              <a href='#what-we-do' onClick={(e) => handleScroll(e, '#what-we-do')}>Our Work</a>
+              <a href='#meet-our-team' onClick={(e) => handleScroll(e, '#meet-our-team')}>Our Team</a>
+              <a href='#our-clients' onClick={(e) => handleScroll(e, '#our-clients')}>Clients</a>
+              <a href='#contact-us' onClick={(e) => handleScroll(e, '#contact-us')}>Contact Us</a>
             </Nav>
           </Container>
         </Navbar>

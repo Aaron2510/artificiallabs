@@ -184,6 +184,12 @@ video {
 .modal-team .modal-dialog {
   @media (max-width: 991.98px) {
     max-width: 90% !important;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 767.98px) {
+    max-width: 90% !important;
+    margin: 0 auto;
   }
 
   .modal-content {
@@ -195,7 +201,14 @@ video {
   .modal-dialog {
     @media (max-width: 991.98px) {
       max-width: 90% !important;
+      margin: 0 auto;
     }
+
+    @media (max-width: 767.98px) {
+      max-width: 90% !important;
+      margin: 0 auto;
+    }
+
 
     .modal-content {
       color: #fff;

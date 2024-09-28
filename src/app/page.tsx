@@ -33,7 +33,7 @@ export default function Home() {
 
 
   return (
-    <main className={styles.home}>
+    <main className={styles.home} id="mainframe">
       <Mainframe />
 
       <section className={`${theme.section} ${styles.section1}`} id="section2">
@@ -99,7 +99,7 @@ export default function Home() {
           <div className={styles.socialMenu}>
             <Link href="http://www.youtube.com/@ArtificialLabsAI" target="blank"><FontAwesomeIcon icon={faYoutube} className="fa-fw" /></Link>
             <Link href="https://www.instagram.com/artificiallabs.in/" target="blank"><FontAwesomeIcon icon={faInstagram} className="fa-fw" /></Link>
-            <Link href="https://www.linkedin.com/in/sanket-bodake-995b5b205/" target="blank"><FontAwesomeIcon icon={faLinkedin} className="fa-fw" /></Link>
+            <Link href="https://www.linkedin.com/" target="blank"><FontAwesomeIcon icon={faLinkedin} className="fa-fw" /></Link>
           </div>
         </Container>
       </section>
