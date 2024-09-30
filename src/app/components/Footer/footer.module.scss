@@ -24,9 +24,12 @@
         svg {
             max-width: 200px;
             display: block;
+            margin-left: -1rem;
+            margin-bottom: 1rem;
 
             @media (max-width: 575.98px) {
                 margin: 0 auto;
+                margin-bottom: 1rem;
             }
         }
 
@@ -47,6 +50,48 @@
             a {
                 text-decoration: underline;
                 color: blue;
+            }
+        }
+
+        .socialMenu {
+            gap: 1rem;
+            display: flex;
+            align-items: center;
+
+            a {
+                width: 40px;
+                height: 40px;
+                color: black;
+                display: block;
+                transition: 0.6s;
+                font-size: 1.5em;
+                line-height: 40px;
+                text-align: center;
+                border-radius: 50%;
+                background-color: #fff;
+                box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
+
+                svg{
+                    margin: 0 !important;
+                    display: inline-block;
+                }
+
+                &:hover {
+                    color: #fff;
+                    transform: translate(0, -10%);
+
+                    &:nth-child(1) {
+                        background-color: #ff0000;
+                    }
+
+                    &:nth-child(2) {
+                        background-color: #bc2a8d;
+                    }
+
+                    &:nth-child(3) {
+                        background-color: #0077b5;
+                    }
+                }
             }
         }
     }

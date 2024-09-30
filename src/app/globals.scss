@@ -131,6 +131,11 @@ video {
   font-size: clamp(3.5rem, 3rem + 1.6vw, 5rem);
   /* font-weight: 600; */
   padding: 0 20px 50px 20px;
+
+  @media (max-width: 767.98px) {
+    font-size: 50px;
+    font-weight: 500;
+}
 }
 
 /* the slides */

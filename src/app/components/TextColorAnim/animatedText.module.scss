@@ -1,5 +1,5 @@
 .waveText {
-  font-size: 3.5rem;
+  // font-size: 4rem;
   font-weight: 900;
   /* Bold text */
   color: #fff;
@@ -8,21 +8,13 @@
   text-align: center;
   color: #68d0e0;
 
-  @media (min-width: 1400px) {
-    font-size: 2.8rem;  
-  }
+  // @media (max-width: 1199.98px) {
+  //   font-size: 2.5rem; 
+  // }
 
-  @media (max-width: 1199.98px) {
-    font-size: 2.5rem; 
-  }
-
-  @media (max-width: 991.98px) {
-    font-size: 2rem;
-  }
-
-  @media (max-width: 767.98px) {
-    font-size: 1.5rem;
-  }
+  // @media (max-width: 767.98px) {
+  //   font-size: 1.5rem;
+  // }
 
   @supports (background-clip: text) or (-webkit-background-clip: text) {
     color: transparent;
@@ -35,6 +27,24 @@
     /* Starting at the left */
     animation: animateWave 9s infinite linear reverse;
     /* Smooth left-to-right animation */
+  }
+
+  span {
+    display: block;
+    font-size: 6rem;
+
+    @media (max-width: 767.98px) {
+      font-size: 4rem;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      font-size: 4.4rem;
+
+      @media (max-width: 767.98px) {
+        font-size: 3rem;
+      }
+    }
   }
 }
 

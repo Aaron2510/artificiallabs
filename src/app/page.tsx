@@ -5,8 +5,6 @@ import { useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Container } from "react-bootstrap";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInstagram, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 // theme
 import styles from './page.module.scss';
@@ -90,17 +88,6 @@ export default function Home() {
         <Container>
           <h1 className="titles text-center">Our Clients</h1>
           <OurClients />
-        </Container>
-      </section>
-
-      <section className={`${theme.section} ${styles.section8}`} id="contact-us">
-        <Container>
-          <h1 className="titles text-center">Connect with us</h1>
-          <div className={styles.socialMenu}>
-            <Link href="http://www.youtube.com/@ArtificialLabsAI" target="blank"><FontAwesomeIcon icon={faYoutube} className="fa-fw" /></Link>
-            <Link href="https://www.instagram.com/artificiallabs.in/" target="blank"><FontAwesomeIcon icon={faInstagram} className="fa-fw" /></Link>
-            <Link href="https://www.linkedin.com/" target="blank"><FontAwesomeIcon icon={faLinkedin} className="fa-fw" /></Link>
-          </div>
         </Container>
       </section>
 

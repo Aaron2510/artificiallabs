@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,7 +11,6 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 // Components
 import Footer from './components/Footer'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap', weight: ['300', '400', '500', '600', '700', '800'] })
 const poppins = Poppins({ subsets: ["latin"], variable: '--font-poppins', display: "swap", weight: ['300', '400', '500', '600', '700', '800'] });
 config.autoAddCss = false
 
@@ -27,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${poppins.variable}`}>
+      <body className={poppins.variable}>
         {children}
         <Footer />
       </body>

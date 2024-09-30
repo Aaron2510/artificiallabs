@@ -18,7 +18,9 @@ const TextColorAnim = () => {
 
   return (
     <h1 className={styles.waveText} ref={textRef}>
-      MAKE FILMS AS BIG AND WILD AS YOUR IMAGINATION
+      <span>MAKE FILMS AS BIG</span>
+      <span>AND WILD AS YOUR</span>
+      <span>IMAGINATION</span>
     </h1>
   );
 };
