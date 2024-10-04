@@ -20,10 +20,12 @@ gsap.registerPlugin(ScrollTrigger);
 const MinframeAnime = () => {
     const logoRef = useRef<any>(null);
     const pLogoRef = useRef<any>(null);
+    const animeWrap = useRef<any>(null);
     const arrowDown = useRef<any>(null);
     const locationCardsRef = useRef<any>([]);
     const isSmallDevice = useMediaQuery({ maxWidth: 992 });
     const isResLarge = useMediaQuery({ maxWidth: 2155 });
+    
 
     useGSAP(() => {
         // Scroll to the top first
@@ -31,15 +33,24 @@ const MinframeAnime = () => {
 
         let isScrolling = true;
 
+        const rect = animeWrap.current.getBoundingClientRect();
+        const offsetTop = rect.top + window.scrollY;
+
+        console.log('Element offset from top of the window:', offsetTop);
+
         // Callback function for gsap ticker
         const checkScrollComplete = () => {
             if (window.scrollY === 0 && isScrolling) {
                 isScrolling = false;
 
-                if (logoRef && locationCardsRef && pLogoRef) {
-                    // if (!isSmallDevice) {
-                    //     document.body.style.overflow = "hidden";
-                    // }
+                if (logoRef && locationCardsRef && pLogoRef && animeWrap) {
+
+                    const rect = animeWrap.current.getBoundingClientRect();
+                    const offsetTop = rect.top + window.scrollY;                    
+
+                    if (!isSmallDevice && offsetTop <= 0) {
+                        document.body.style.overflow = "hidden";
+                    }
 
                     gsap.set(pLogoRef.current, { autoAlpha: 0 });
                     gsap.set(arrowDown.current, { autoAlpha: 1 });
@@ -174,7 +185,7 @@ const MinframeAnime = () => {
     }, []);
 
     return (
-        <div className={`${styles.animeWrap} ${isSmallDevice ? styles.smallDevice : ""}`}>
+        <div className={`${styles.animeWrap} ${isSmallDevice ? styles.smallDevice : ""}`} ref={animeWrap}>
             <Header />
             <Container className={styles.container}>
                 {isSmallDevice ? (
