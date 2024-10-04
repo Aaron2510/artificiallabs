@@ -1,7 +1,6 @@
 "use client"
 
 /* eslint-disable react/no-unescaped-entities */
-import { useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Container } from "react-bootstrap";
@@ -17,18 +16,13 @@ import ShowReel from './components/ShowReel';
 import CodeAnim from './components/CodeAnim';
 import Mainframe from './components/Mainframe';
 import OurClients from './components/OurClients';
-import ScrollToTop from './components/ScrollToTop';
+// import ScrollToTop from './components/ScrollToTop';
 import TextColorAnim from './components/TextColorAnim';
 
 // Images
 import Logo from '../../public/logo.svg'
 
 export default function Home() {
-
-  useEffect(() => {
-    window.scrollTo(0, 0); // Scrolls to the top of the page on reload
-  }, []); // The empty array ensures this runs only once when the component mounts
-
 
   return (
     <main className={styles.home} id="mainframe">
