@@ -159,7 +159,7 @@ const MinframeAnime = () => {
                     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
                 };
             }
-        }, 500); // Adjust the timeout based on scroll completion time
+        }, 1500); // Adjust the timeout based on scroll completion time
     }, []);    
 
     return (
