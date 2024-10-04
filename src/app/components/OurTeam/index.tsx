@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from 'next/image'
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Figure, FigureCaption, Modal } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose } from "@fortawesome/free-solid-svg-icons";
@@ -108,7 +108,7 @@ const OurTeam = () => {
                             <p>
                                 <strong>Carl Savio</strong> is a writer, creative technologist and
                                 film director with over 20 years of experience. He is also the founder of Bluebot Digital, an award-winning
-                                creative agency established in 2016 that works closely with some of India’s leading brands. With his strong
+                                creative agency established in 2014 that works closely with some of India’s leading brands. With his strong
                                 understanding of traditional film making techniques he’s now looking forward to create real-world value and
                                 impact with Artificial Labs.
                             </p>
