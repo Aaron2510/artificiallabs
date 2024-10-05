@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Container } from 'react-bootstrap';
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { useMediaQuery } from 'react-responsive';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,7 +13,6 @@ import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./mainframe.module.scss";
 import Header from "../Header";
-import AppButton from '../AppButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,46 +23,15 @@ const MinframeAnime = () => {
     const locationCardsRef = useRef<any>([]);
     const isSmallDevice = useMediaQuery({ maxWidth: 992 });
     const isResLarge = useMediaQuery({ maxWidth: 2155 });
-    const [isScroll, setScroll] = useState<any>(0)
-
-    useEffect(() => {
-        // Function to handle scroll event
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            console.log('Current scroll position:', scrollPosition);
-
-            // Check if the scroll position is at the top
-            if (scrollPosition === 0) {
-                console.log('Scrolled to the top!');
-                // You can add additional logic here when scrolled to the top
-            }
-
-            setScroll(scrollPosition)
-
-        };
-
-        // Set up event listener
-        window.addEventListener('scroll', handleScroll);
-
-        // Scroll to the top on component mount
-        window.scrollTo(0, 0);
-
-        // Cleanup function to remove event listener on unmount
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
 
     useGSAP(() => {
-        // const scrollPosition = window.scrollY;
-        console.log('Current isScroll position:', isScroll);
 
+        window.scrollTo(0, 0);
 
-        if (logoRef && locationCardsRef && pLogoRef && isScroll === 0) {
-            if (!isSmallDevice) {
-                document.body.style.overflow = "hidden";
-            }
+        if (logoRef && locationCardsRef && pLogoRef ) {
+            // if (!isSmallDevice) {
+            //     document.body.style.overflow = "hidden";
+            // }
 
             gsap.set(pLogoRef.current, { autoAlpha: 0 });
             gsap.set(arrowDown.current, { autoAlpha: 1 });
@@ -115,7 +83,7 @@ const MinframeAnime = () => {
                                     });
                                 });
 
-                                document.body.style.overflowY = "auto";
+                                // document.body.style.overflowY = "auto";
                                 gsap.to(arrowDown.current, { autoAlpha: 1, duration: 1 });
                             },
                         });
@@ -188,7 +156,7 @@ const MinframeAnime = () => {
         return () => {
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
-    }, [isScroll]);
+    }, []);
 
     return (
         <div className={`${styles.animeWrap} ${isSmallDevice ? styles.smallDevice : ""}`}>
