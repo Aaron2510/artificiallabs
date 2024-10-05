@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import React, { gsap } from "gsap";
-import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Container } from 'react-bootstrap';
+import React, { useEffect, useRef } from "react";
 import { useMediaQuery } from 'react-responsive';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -26,11 +26,11 @@ const MinframeAnime = () => {
     const isResLarge = useMediaQuery({ maxWidth: 2155 });
 
     useGSAP(() => {
-        // Scroll to top on page reload
+        // Scroll to the top first
         window.scrollTo(0, 0);
     
-        // Use a timeout to delay the start of GSAP animations
-        const timeoutId = setTimeout(() => {
+        // Use requestAnimationFrame to wait for the scroll action to complete
+        requestAnimationFrame(() => {
             if (logoRef && locationCardsRef && pLogoRef) {
                 if (!isSmallDevice) {
                     document.body.style.overflow = "hidden";
@@ -70,10 +70,10 @@ const MinframeAnime = () => {
                                         ease: "power2.inOut",
                                     });
     
-                                    // Start playing pLogoRef video only after the pLogoRef animation completes
+                                    // Play pLogoRef video
                                     pLogoRef.current.play();
     
-                                    // Start playing locationCardsRef video only after the logo animation completes
+                                    // Play locationCardsRef video
                                     locationCardsRef.current.play();
                                     const locationCards = gsap.utils.toArray([locationCardsRef.current, pLogoRef.current]);
                                     locationCards.forEach((card: any) => {
@@ -133,7 +133,7 @@ const MinframeAnime = () => {
     
                 // ScrollTrigger to hide arrowDown when scrolling down
                 ScrollTrigger.create({
-                    trigger: "#section2", // or any other element you want as a reference for the scroll point
+                    trigger: "#section2",
                     start: "top bottom",
                     end: "top top",
                     onEnter: () => gsap.to(arrowDown.current, { autoAlpha: 0, duration: 0.5 }),
@@ -154,16 +154,13 @@ const MinframeAnime = () => {
                     autoAlpha: 0,
                     duration: 2,
                 });
-    
-                return () => {
-                    clearTimeout(timeoutId); // Clean up the timeout
-                    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-                };
             }
-        }, 1200); // Adjust the timeout duration as needed
+        });
     
-        // Ensure to clear the timeout on component unmount
-        return () => clearTimeout(timeoutId);
+        // Cleanup function to remove the ticker on component unmount
+        return () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        };
     }, []);
     
 

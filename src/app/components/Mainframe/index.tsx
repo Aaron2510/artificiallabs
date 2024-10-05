@@ -68,7 +68,7 @@ const Mainframe = () => {
 
   return (
     <div className={styles.mainframe}>
-      <MinframeAnime />
+      <MinframeAnime/>
     </div>
   )
 }

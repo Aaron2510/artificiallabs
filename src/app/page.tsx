@@ -1,8 +1,8 @@
 "use client"
 
 /* eslint-disable react/no-unescaped-entities */
-import Link from 'next/link'
 import Image from 'next/image'
+import React from "react";
 import { Container } from "react-bootstrap";
 
 // theme
@@ -19,8 +19,6 @@ import OurClients from './components/OurClients';
 // import ScrollToTop from './components/ScrollToTop';
 import TextColorAnim from './components/TextColorAnim';
 
-// Images
-import Logo from '../../public/logo.svg'
 
 export default function Home() {
 
