@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Container } from 'react-bootstrap';
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useMediaQuery } from 'react-responsive';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,7 +13,6 @@ import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./mainframe.module.scss";
 import Header from "../Header";
-import AppButton from '../AppButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,21 +23,39 @@ const MinframeAnime = () => {
     const locationCardsRef = useRef<any>([]);
     const isSmallDevice = useMediaQuery({ maxWidth: 992 });
     const isResLarge = useMediaQuery({ maxWidth: 2155 });
+    const [isLoad, setLoad] = useState(false)
 
-    useGSAP(() => {
+    // Effect to scroll to the top
+    useEffect(() => {
         // Scroll to the top first
         window.scrollTo(0, 0);
-    
+
+        // Set a timeout to ensure the scroll action completes
+        const checkScrollTop = () => {
+            if (window.scrollY === 0) {
+                setLoad(true);
+                window.removeEventListener('scroll', checkScrollTop); // Remove listener once reached top
+            }
+        };
+
+        window.addEventListener('scroll', checkScrollTop);
+
+        return () => {
+            window.removeEventListener('scroll', checkScrollTop);
+        };
+    }, []);
+
+    useGSAP(() => {
         // Use requestAnimationFrame to wait for the scroll action to complete
         requestAnimationFrame(() => {
-            if (logoRef && locationCardsRef && pLogoRef) {
+            if (isLoad && logoRef.current && locationCardsRef.current && pLogoRef.current) {
                 if (!isSmallDevice) {
                     document.body.style.overflow = "hidden";
                 }
-    
+
                 gsap.set(pLogoRef.current, { autoAlpha: 0 });
                 gsap.set(arrowDown.current, { autoAlpha: 1 });
-    
+
                 // Logo Animation
                 gsap.to(logoRef.current, {
                     duration: 1,
@@ -69,10 +86,10 @@ const MinframeAnime = () => {
                                         transform: "translate(0, 0)",
                                         ease: "power2.inOut",
                                     });
-    
+
                                     // Play pLogoRef video
                                     pLogoRef.current.play();
-    
+
                                     // Play locationCardsRef video
                                     locationCardsRef.current.play();
                                     const locationCards = gsap.utils.toArray([locationCardsRef.current, pLogoRef.current]);
@@ -85,7 +102,7 @@ const MinframeAnime = () => {
                                             once: true,
                                         });
                                     });
-    
+
                                     document.body.style.overflowY = "auto";
                                     gsap.to(arrowDown.current, { autoAlpha: 1, duration: 1 });
                                 },
@@ -93,7 +110,7 @@ const MinframeAnime = () => {
                         });
                     },
                 });
-    
+
                 // ScrollTrigger for the logo
                 ScrollTrigger.create({
                     trigger: logoRef.current,
@@ -130,7 +147,7 @@ const MinframeAnime = () => {
                         });
                     },
                 });
-    
+
                 // ScrollTrigger to hide arrowDown when scrolling down
                 ScrollTrigger.create({
                     trigger: "#section2",
@@ -139,9 +156,9 @@ const MinframeAnime = () => {
                     onEnter: () => gsap.to(arrowDown.current, { autoAlpha: 0, duration: 0.5 }),
                     onLeaveBack: () => gsap.to(arrowDown.current, { autoAlpha: 1, duration: 0.5 }),
                 });
-    
+
                 gsap.set([locationCardsRef.current], { autoAlpha: 0 });
-    
+
                 gsap.to(locationCardsRef.current, {
                     scrollTrigger: {
                         trigger: locationCardsRef.current,
@@ -156,13 +173,12 @@ const MinframeAnime = () => {
                 });
             }
         });
-    
+
         // Cleanup function to remove the ticker on component unmount
         return () => {
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
-    }, []);
-    
+    }, [isLoad]);
 
     return (
         <div className={`${styles.animeWrap} ${isSmallDevice ? styles.smallDevice : ""}`}>
