@@ -55,7 +55,7 @@ const MinframeAnime = () => {
     }, []);
 
 
-    useEffect(() => {
+    useGSAP(() => {
         // const scrollPosition = window.scrollY;
         console.log('Current isScroll position:', isScroll);
 
@@ -188,7 +188,7 @@ const MinframeAnime = () => {
         return () => {
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
-    }, [isScroll, isSmallDevice]);
+    }, [isScroll]);
 
     return (
         <div className={`${styles.animeWrap} ${isSmallDevice ? styles.smallDevice : ""}`}>
