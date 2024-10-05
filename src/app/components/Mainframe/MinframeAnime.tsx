@@ -188,7 +188,7 @@ const MinframeAnime = () => {
         return () => {
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
-    }, [isScroll]);
+    }, [isScroll, isSmallDevice]);
 
     return (
         <div className={`${styles.animeWrap} ${isSmallDevice ? styles.smallDevice : ""}`}>
