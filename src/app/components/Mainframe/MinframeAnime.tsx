@@ -56,11 +56,8 @@ const MinframeAnime = () => {
 
 
     useGSAP(() => {
-        // Scroll to the top first
-        // window.scrollTo(0, 0);
-
         // const scrollPosition = window.scrollY;
-        // console.log('Current scroll position:', scrollPosition);
+        console.log('Current isScroll position:', isScroll);
 
 
         if (logoRef && locationCardsRef && pLogoRef && isScroll === 0) {

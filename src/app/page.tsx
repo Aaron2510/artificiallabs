@@ -19,7 +19,6 @@ import OurClients from './components/OurClients';
 // import ScrollToTop from './components/ScrollToTop';
 import TextColorAnim from './components/TextColorAnim';
 
-
 export default function Home() {
 
   return (
