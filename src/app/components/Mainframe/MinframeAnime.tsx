@@ -55,7 +55,7 @@ const MinframeAnime = () => {
     }, []);
 
 
-    useGSAP(() => {
+    useEffect(() => {
         // const scrollPosition = window.scrollY;
         console.log('Current isScroll position:', isScroll);
 
