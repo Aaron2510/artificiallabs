@@ -26,17 +26,13 @@ const MinframeAnime = () => {
     const isResLarge = useMediaQuery({ maxWidth: 2155 });
 
     useGSAP(() => {
-
         window.scrollTo(0, 0);
-
-        if (logoRef && locationCardsRef && pLogoRef ) {
-            // if (!isSmallDevice) {
-            //     document.body.style.overflow = "hidden";
-            // }
-
+    
+        if (logoRef.current && locationCardsRef.current && pLogoRef.current) {
+            // Run animations only if the elements are present
             gsap.set(pLogoRef.current, { autoAlpha: 0 });
             gsap.set(arrowDown.current, { autoAlpha: 1 });
-
+    
             // Logo Animation
             gsap.to(logoRef.current, {
                 duration: 1,
@@ -48,7 +44,9 @@ const MinframeAnime = () => {
                 stagger: 0.2,
                 ease: "power2.inOut",
                 onComplete: function () {
-                    logoRef.current.play();
+                    if (logoRef.current) {
+                        logoRef.current.play();  // Safely access logoRef.current
+                    }
                     gsap.delayedCall(3, () => {
                         gsap.to(logoRef.current, {
                             duration: 1,
@@ -59,20 +57,21 @@ const MinframeAnime = () => {
                             transform: "translate(0, 0)",
                             ease: "power2.inOut",
                             onComplete: function () {
-                                gsap.to(pLogoRef.current, { autoAlpha: 1, duration: 0 });
-                                gsap.to(pLogoRef.current, {
-                                    width: "100px",
-                                    top: "12px",
-                                    left: "210px",
-                                    transform: "translate(0, 0)",
-                                    ease: "power2.inOut",
-                                });
-
-                                // Play pLogoRef video
-                                pLogoRef.current.play();
-
-                                // Play locationCardsRef video
-                                locationCardsRef.current.play();
+                                if (pLogoRef.current) {
+                                    gsap.to(pLogoRef.current, { autoAlpha: 1, duration: 0 });
+                                    gsap.to(pLogoRef.current, {
+                                        width: "100px",
+                                        top: "12px",
+                                        left: "210px",
+                                        transform: "translate(0, 0)",
+                                        ease: "power2.inOut",
+                                    });
+                                    pLogoRef.current.play();  // Safely access pLogoRef.current
+                                }
+                                if (locationCardsRef.current) {
+                                    locationCardsRef.current.play();  // Safely access locationCardsRef.current
+                                }
+    
                                 const locationCards = gsap.utils.toArray([locationCardsRef.current, pLogoRef.current]);
                                 locationCards.forEach((card: any) => {
                                     const anim = gsap.fromTo(card, { autoAlpha: 0, y: 50 }, { duration: 1, autoAlpha: 1, y: 0 });
@@ -83,7 +82,7 @@ const MinframeAnime = () => {
                                         once: true,
                                     });
                                 });
-
+    
                                 document.body.style.overflowY = "auto";
                                 gsap.to(arrowDown.current, { autoAlpha: 1, duration: 1 });
                             },
@@ -91,44 +90,50 @@ const MinframeAnime = () => {
                     });
                 },
             });
-
+    
             // ScrollTrigger for the logo
             ScrollTrigger.create({
                 trigger: logoRef.current,
                 start: "top top",
                 end: "bottom top",
                 onEnterBack: () => {
-                    gsap.to(logoRef.current, {
-                        duration: 1,
-                        width: "40rem",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, 250%)",
-                        ease: "power2.inOut",
-                    });
+                    if (logoRef.current) {
+                        gsap.to(logoRef.current, {
+                            duration: 1,
+                            width: "40rem",
+                            top: "50%",
+                            left: "50%",
+                            transform: "translate(-50%, 250%)",
+                            ease: "power2.inOut",
+                        });
+                    }
                 },
                 onLeave: () => {
-                    gsap.to(logoRef.current, {
-                        duration: 1,
-                        width: "165px",
-                        top: "-5px",
-                        left: "40px",
-                        transform: "translate(0, 0)",
-                        ease: "power2.inOut",
-                    });
+                    if (logoRef.current) {
+                        gsap.to(logoRef.current, {
+                            duration: 1,
+                            width: "165px",
+                            top: "-5px",
+                            left: "40px",
+                            transform: "translate(0, 0)",
+                            ease: "power2.inOut",
+                        });
+                    }
                 },
                 onEnter: () => {
-                    gsap.to(logoRef.current, {
-                        duration: 1,
-                        width: "165px",
-                        top: "-5px",
-                        left: "40px",
-                        transform: "translate(0, 0)",
-                        ease: "power2.inOut",
-                    });
+                    if (logoRef.current) {
+                        gsap.to(logoRef.current, {
+                            duration: 1,
+                            width: "165px",
+                            top: "-5px",
+                            left: "40px",
+                            transform: "translate(0, 0)",
+                            ease: "power2.inOut",
+                        });
+                    }
                 },
             });
-
+    
             // ScrollTrigger to hide arrowDown when scrolling down
             ScrollTrigger.create({
                 trigger: "#section2",
@@ -137,9 +142,9 @@ const MinframeAnime = () => {
                 onEnter: () => gsap.to(arrowDown.current, { autoAlpha: 0, duration: 0.5 }),
                 onLeaveBack: () => gsap.to(arrowDown.current, { autoAlpha: 1, duration: 0.5 }),
             });
-
+    
             gsap.set([locationCardsRef.current], { autoAlpha: 0 });
-
+    
             gsap.to(locationCardsRef.current, {
                 scrollTrigger: {
                     trigger: locationCardsRef.current,
@@ -153,12 +158,13 @@ const MinframeAnime = () => {
                 duration: 2,
             });
         }
-        // Cleanup function to remove the ticker on component unmount
+    
+        // Cleanup function to remove the ScrollTriggers on component unmount
         return () => {
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
     }, []);
-
+    
     return (
         <div className={`${styles.animeWrap} ${isSmallDevice ? styles.smallDevice : ""}`}>
             <Header />
