@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Container } from 'react-bootstrap';
-import React, { useRef } from "react";
+import React, {  useRef } from "react";
 import { useMediaQuery } from 'react-responsive';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,6 +13,7 @@ import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./mainframe.module.scss";
 import Header from "../Header";
+import AppButton from '../AppButton';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -83,7 +84,7 @@ const MinframeAnime = () => {
                                     });
                                 });
 
-                                // document.body.style.overflowY = "auto";
+                                document.body.style.overflowY = "auto";
                                 gsap.to(arrowDown.current, { autoAlpha: 1, duration: 1 });
                             },
                         });
