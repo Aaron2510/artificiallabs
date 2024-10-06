@@ -32,7 +32,7 @@ const MinframeAnime = () => {
         if (section) {
             // Use GSAP's scrollTo for smooth scroll
             gsap.to(window, {
-                duration: 1.5, // Duration of scroll
+                duration: 1, // Duration of scroll
                 scrollTo: section,
                 ease: "power2.inOut",
                 onComplete: () => {
@@ -45,7 +45,7 @@ const MinframeAnime = () => {
 
                         gsap.set(pLogoRef.current, { autoAlpha: 0 });
                         gsap.set(arrowDown.current, { autoAlpha: 1 });
-
+                        
                         // Logo Animation
                         gsap.to(logoRef.current, {
                             duration: 1,
@@ -117,7 +117,7 @@ const MinframeAnime = () => {
                                     width: "40rem",
                                     top: "50%",
                                     left: "50%",
-                                    transform: "translate(-50%, 250%)",
+                                    transform: "translate(-50%, 350%)",
                                     ease: "power2.inOut",
                                 });
                             },
