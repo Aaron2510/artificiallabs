@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Container } from 'react-bootstrap';
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useMediaQuery } from 'react-responsive';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -25,14 +25,23 @@ const MinframeAnime = () => {
     const locationCardsRef = useRef<any>([]);
     const isSmallDevice = useMediaQuery({ maxWidth: 992 });
     const isResLarge = useMediaQuery({ maxWidth: 2155 });
+    const [mounted, setMounted] = useState(false); // Track if component is mounted
+
+      // Ensure component is mounted before using media query
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
     useGSAP(() => {
+        if(!mounted) return;
 
         // First, scroll to the top using GSAP
         gsap.to(window, {
             scrollTo: 0, duration: 0, onComplete: () => {
                 // This block runs after the scroll-to-top is complete
-                if (logoRef.current && locationCardsRef.current && pLogoRef.current) {
+                console.log("1", window.scrollY === 0);
+                
+                if (logoRef.current && locationCardsRef.current && pLogoRef.current && window.scrollY === 0) {
 
                     if (!isSmallDevice) {
                         document.body.style.overflow = "hidden";
@@ -164,7 +173,7 @@ const MinframeAnime = () => {
         return () => {
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
-    }, []);
+    }, [mounted]);
 
 
     return (

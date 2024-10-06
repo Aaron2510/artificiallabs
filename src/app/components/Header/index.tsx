@@ -22,6 +22,7 @@ const Header = () => {
   const [mounted, setMounted] = useState(false); // Track if component is mounted
   const isSmallDevice = useMediaQuery({ maxWidth: 992 });
   const navLinksRef = useRef<HTMLDivElement>(null); // Reference to nav links
+  const petraLogoRef = useRef<any>(null); // Reference to nav links
 
   // Ensure component is mounted before using media query
   useEffect(() => {
@@ -44,11 +45,10 @@ const Header = () => {
 
   // GSAP effect to hide/show the logo on scroll
   useGSAP(() => {
-    if (!mounted) return;
+    if (!mounted && !petraLogoRef.current) return;
 
-    const logo = document.querySelector(`.${styles.petraLogo}`); // Select the logo
 
-    gsap.to(logo, {
+    gsap.to(petraLogoRef.current, {
       y: -100, // Move the logo up to hide it
       opacity: 0,
       ease: 'power2.out',
@@ -66,8 +66,8 @@ const Header = () => {
       trigger: document.body,
       start: 'top+=10 top',
       end: 'bottom',
-      onEnterBack: () => gsap.to(logo, { y: 0, opacity: 1, duration: 0.5 }),
-      onLeave: () => gsap.to(logo, { y: -100, opacity: 0, duration: 0.5 }),
+      onEnterBack: () => gsap.to(petraLogoRef.current, { y: 0, opacity: 1, duration: 0.5 }),
+      onLeave: () => gsap.to(petraLogoRef.current, { y: -100, opacity: 0, duration: 0.5 }),
     });
 
     return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -119,6 +119,7 @@ const Header = () => {
                 width={400}
                 height={219}
                 alt='ptralogo'
+                ref={petraLogoRef}
               />
             </div>
             <Humburger onClick={handleClick} />
