@@ -11,6 +11,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from 'next/navigation';
 
 import styles from "./mainframe.module.scss";
 import Header from "../Header";
@@ -18,45 +19,33 @@ import Header from "../Header";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const MinframeAnime = () => {
-    const navBrand = useRef<any>(null);
     const logoRef = useRef<any>(null);
     const pLogoRef = useRef<any>(null);
     const arrowDown = useRef<any>(null);
     const locationCardsRef = useRef<any>([]);
     const isSmallDevice = useMediaQuery({ maxWidth: 992 });
+    const router = useRouter();
+    const [mounted, setMounted] = useState(false); // Track if component is mounted
 
-    // Function to ensure the window scrolls to the top on page refresh
-    const toPageTop = () => {
-        if (typeof window !== "undefined") { // Check if window is defined (i.e., we're in the browser)
-            if (sessionStorage.getItem("isRefreshing")) {
-                // If the flag exists, scroll to the top
-                window.scrollTo(0, 0);
-                sessionStorage.removeItem("isRefreshing"); // Clear the flag
-            }
-
-            // Set the flag when the page is about to unload
-            window.addEventListener("beforeunload", function () {
-                sessionStorage.setItem("isRefreshing", "true");
-            });
-        }
-    };
-
+    // Scroll to top on route change
     useEffect(() => {
-        toPageTop(); // Call the function when the component mounts
-    }, []); // Run once on mount
-
+        const section = document.querySelector("#mainframe"); // Find the section by ID
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' }); // Scroll to the section
+          setMounted(true)
+        }
+    }, []);
 
     useGSAP(() => {
 
         // Animation logic
-        if (logoRef.current && locationCardsRef.current && pLogoRef.current) {
+        if (logoRef.current && locationCardsRef.current && pLogoRef.current && mounted) {
             if (!isSmallDevice) {
                 document.body.style.overflow = "hidden";
             }
 
             gsap.set(pLogoRef.current, { autoAlpha: 0 });
             gsap.set(arrowDown.current, { autoAlpha: 1 });
-            gsap.set(navBrand.current, { position: 'absolute'  });
 
             // Logo Animation
             gsap.to(logoRef.current, {
@@ -80,8 +69,7 @@ const MinframeAnime = () => {
                             transform: "translate(0, 0)",
                             ease: "power2.inOut",
                             onComplete: function () {
-                                gsap.to(pLogoRef.current, { autoAlpha: 1, duration: 0});
-                                gsap.to(navBrand.current, { position: 'fixed' });
+                                gsap.to(pLogoRef.current, { autoAlpha: 1, duration: 0 });
                                 gsap.to(pLogoRef.current, {
                                     width: "100px",
                                     top: "12px",
@@ -180,7 +168,7 @@ const MinframeAnime = () => {
         return () => {
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
-    }, [isSmallDevice]);
+    }, [mounted]);
 
     return (
         <div className={`${styles.animeWrap} ${isSmallDevice ? styles.smallDevice : ""}`}>
@@ -190,7 +178,7 @@ const MinframeAnime = () => {
                     <Image className={styles.locationAnime} src="/location.gif" alt="location" width={800} height={282} />
                 ) : (
                     <>
-                        <Link className={styles.navBrand} href="/" ref={navBrand}>
+                        <Link className={styles.navBrand} href="/">
                             <video className="logo" ref={logoRef} muted autoPlay>
                                 <source src="./videos/Logo.webm" type="video/webm" />
                                 Your browser does not support the video tag.
