@@ -19,20 +19,27 @@ import Header from "../Header";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const MinframeAnime = () => {
+    const navbarBrand = useRef<any>(null);
     const logoRef = useRef<any>(null);
     const pLogoRef = useRef<any>(null);
     const arrowDown = useRef<any>(null);
     const locationCardsRef = useRef<any>([]);
     const isSmallDevice = useMediaQuery({ maxWidth: 992 });
-    const [mounted, setMounted] = useState(false); 
+    const [mounted, setMounted] = useState(false);
     const [menuActive, setMenuActive] = useState(false);
 
     // Scroll to top on route change
     useEffect(() => {
         const section = document.querySelector("#mainframe"); // Find the section by ID
         if (section) {
-          section.scrollIntoView({ behavior: 'smooth' }); // Scroll to the section
-          setMounted(true)
+            // Smooth scroll and set mounted state only after scroll is complete
+            section.scrollIntoView({ behavior: 'smooth' });
+            const scrollTimeout = setTimeout(() => {
+                setMounted(true); // Animation starts only after scrolling completes
+            }, 1000); // Set delay matching scroll duration
+
+            // Cleanup timeout if component unmounts before scroll completes
+            return () => clearTimeout(scrollTimeout);
         }
     }, []);
 
@@ -70,6 +77,8 @@ const MinframeAnime = () => {
                             ease: "power2.inOut",
                             onComplete: function () {
                                 gsap.to(pLogoRef.current, { autoAlpha: 1, duration: 0 });
+                                gsap.set(navbarBrand.current, { position: "fixed" });
+
                                 gsap.to(pLogoRef.current, {
                                     width: "100px",
                                     top: "12px",
@@ -175,7 +184,7 @@ const MinframeAnime = () => {
 
     return (
         <div className={`${styles.animeWrap} ${isSmallDevice ? styles.smallDevice : ""}`}>
-            <Header menuActive={menuActive}/>
+            <Header menuActive={menuActive} />
             <Container className={styles.container}>
                 {isSmallDevice ? (
                     <Image className={styles.locationAnime} src="/location.gif" alt="location" width={800} height={282} />

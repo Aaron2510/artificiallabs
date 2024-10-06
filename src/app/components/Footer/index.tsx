@@ -14,7 +14,7 @@ import Logo from '../../../../public/logo.svg'
 
 const Footer = () => {
     return (
-        <footer className={styles.footer}>
+        <footer className={styles.footer} id='contact-us'>
             <div className={styles.footerTop}>
                 <Container>
                     <Row className={`${styles.row} justify-space-between`}>
