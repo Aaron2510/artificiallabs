@@ -24,8 +24,8 @@ const MinframeAnime = () => {
     const arrowDown = useRef<any>(null);
     const locationCardsRef = useRef<any>([]);
     const isSmallDevice = useMediaQuery({ maxWidth: 992 });
-    const router = useRouter();
-    const [mounted, setMounted] = useState(false); // Track if component is mounted
+    const [mounted, setMounted] = useState(false); 
+    const [menuActive, setMenuActive] = useState(false);
 
     // Scroll to top on route change
     useEffect(() => {
@@ -77,6 +77,9 @@ const MinframeAnime = () => {
                                     transform: "translate(0, 0)",
                                     ease: "power2.inOut",
                                 });
+
+                                // Activate menu
+                                setMenuActive(true)
 
                                 // Play pLogoRef video
                                 pLogoRef.current.play();
@@ -172,7 +175,7 @@ const MinframeAnime = () => {
 
     return (
         <div className={`${styles.animeWrap} ${isSmallDevice ? styles.smallDevice : ""}`}>
-            <Header />
+            <Header menuActive={menuActive}/>
             <Container className={styles.container}>
                 {isSmallDevice ? (
                     <Image className={styles.locationAnime} src="/location.gif" alt="location" width={800} height={282} />

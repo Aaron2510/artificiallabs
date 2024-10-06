@@ -16,7 +16,7 @@ import Humburger from './Humburger';
 
 gsap.registerPlugin(ScrollTrigger); // Register ScrollTrigger plugin
 
-const Header = () => {
+const Header = ({ menuActive }: any) => {
   const [error, setError] = useState(false);
   const [isMenu, setMenu] = useState<boolean>(false);
   const [mounted, setMounted] = useState(false); // Track if component is mounted
@@ -96,9 +96,8 @@ const Header = () => {
 
   return (
     <header
-      className={`${styles.header} ${isSmallDevice ? styles.smallDevice : ''} ${
-        isMenu ? styles.open : styles.close
-      }`}
+      className={`${styles.header} ${isSmallDevice ? styles.smallDevice : ''} ${isMenu ? styles.open : styles.close
+        }`}
     >
       {isSmallDevice ? (
         <Container className={styles.container}>
@@ -137,8 +136,8 @@ const Header = () => {
       ) : (
         <Navbar expand='lg' className={styles.navbarWrap}>
           <Container className={styles.container}>
-            <Nav className={styles.navbar}>
-              <a href='#mainframe' onClick={(e) => handleScroll(e, '#mainframe')}>Home</a>
+            <Nav className={`${styles.navbar} ${menuActive ? styles.active: styles.disabled}`}>
+              <a href='#mainframe' onClick={(e) => handleScroll(e, '#mainframe')} >Home</a>
               <a href='#what-we-do' onClick={(e) => handleScroll(e, '#what-we-do')}>Our Work</a>
               <a href='#meet-our-team' onClick={(e) => handleScroll(e, '#meet-our-team')}>Our Team</a>
               <a href='#our-clients' onClick={(e) => handleScroll(e, '#our-clients')}>Clients</a>
