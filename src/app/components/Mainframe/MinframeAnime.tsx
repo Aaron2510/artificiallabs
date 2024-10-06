@@ -19,36 +19,33 @@ import Header from "../Header";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const MinframeAnime = () => {
-    const navbarBrand = useRef<any>(null);
     const logoRef = useRef<any>(null);
     const pLogoRef = useRef<any>(null);
     const arrowDown = useRef<any>(null);
+    const navbarBrand = useRef<any>(null);
     const locationCardsRef = useRef<any>([]);
-    const isSmallDevice = useMediaQuery({ maxWidth: 992 });
-    const [mounted, setMounted] = useState(false);
     const [menuActive, setMenuActive] = useState(false);
-
-    // Scroll to top on route change
-    useEffect(() => {
-        const section = document.querySelector("#mainframe"); // Find the section by ID
-        if (section) {
-            // Smooth scroll and set mounted state only after scroll is complete
-            section.scrollIntoView({ behavior: 'smooth' });
-            const scrollTimeout = setTimeout(() => {
-                setMounted(true); // Animation starts only after scrolling completes
-            }, 1000); // Set delay matching scroll duration
-
-            // Cleanup timeout if component unmounts before scroll completes
-            return () => clearTimeout(scrollTimeout);
-        }
-    }, []);
+    const isSmallDevice = useMediaQuery({ maxWidth: 992 });
 
     useGSAP(() => {
+        let mounted = false;
+        const section = document.querySelector("#mainframe"); // Find the section by ID
+        if (section) {
+            // Use GSAP's scrollTo for smooth scroll
+            gsap.to(window, {
+                duration: 1.5, // Duration of scroll
+                scrollTo: section,
+                ease: "power2.inOut",
+                onComplete: () => {
+                    mounted = true;
+                },
+            });
+        }
 
         // Animation logic
         if (logoRef.current && locationCardsRef.current && pLogoRef.current && mounted) {
             if (!isSmallDevice) {
-                document.body.style.overflow = "hidden";
+                gsap.set(document.body, { overflow: "hidden" });
             }
 
             gsap.set(pLogoRef.current, { autoAlpha: 0 });
@@ -106,7 +103,7 @@ const MinframeAnime = () => {
                                     });
                                 });
 
-                                document.body.style.overflowY = "auto";
+                                gsap.to(document.body, { overflowY: "auto" });
                                 gsap.to(arrowDown.current, { autoAlpha: 1, duration: 1 });
                             },
                         });
@@ -180,7 +177,7 @@ const MinframeAnime = () => {
         return () => {
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
-    }, [mounted]);
+    }, []);
 
     return (
         <div className={`${styles.animeWrap} ${isSmallDevice ? styles.smallDevice : ""}`}>
