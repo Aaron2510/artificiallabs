@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Container } from 'react-bootstrap';
-import React, { useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useMediaQuery } from 'react-responsive';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -24,7 +24,27 @@ const MinframeAnime = () => {
     const arrowDown = useRef<any>(null);
     const locationCardsRef = useRef<any>([]);
     const isSmallDevice = useMediaQuery({ maxWidth: 992 });
-    const [mounted, setMounted] = useState(false); // Track if component is mounted
+
+    // Function to ensure the window scrolls to the top on page refresh
+    const toPageTop = () => {
+        if (typeof window !== "undefined") { // Check if window is defined (i.e., we're in the browser)
+            if (sessionStorage.getItem("isRefreshing")) {
+                // If the flag exists, scroll to the top
+                window.scrollTo(0, 0);
+                sessionStorage.removeItem("isRefreshing"); // Clear the flag
+            }
+
+            // Set the flag when the page is about to unload
+            window.addEventListener("beforeunload", function () {
+                sessionStorage.setItem("isRefreshing", "true");
+            });
+        }
+    };
+
+    useEffect(() => {
+        toPageTop(); // Call the function when the component mounts
+    }, []); // Run once on mount
+
 
     useGSAP(() => {
 
@@ -36,7 +56,7 @@ const MinframeAnime = () => {
 
             gsap.set(pLogoRef.current, { autoAlpha: 0 });
             gsap.set(arrowDown.current, { autoAlpha: 1 });
-            gsap.set(navBrand.current, { position: 'absolute' });
+            gsap.set(navBrand.current, { position: 'absolute'  });
 
             // Logo Animation
             gsap.to(logoRef.current, {
@@ -60,7 +80,7 @@ const MinframeAnime = () => {
                             transform: "translate(0, 0)",
                             ease: "power2.inOut",
                             onComplete: function () {
-                                gsap.to(pLogoRef.current, { autoAlpha: 1, duration: 0 });
+                                gsap.to(pLogoRef.current, { autoAlpha: 1, duration: 0});
                                 gsap.to(navBrand.current, { position: 'fixed' });
                                 gsap.to(pLogoRef.current, {
                                     width: "100px",
@@ -161,23 +181,6 @@ const MinframeAnime = () => {
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
     }, [isSmallDevice]);
-
-    // Function to ensure the window scrolls to the top on page refresh
-    const toPageTop = () => {
-        if (sessionStorage.getItem("isRefreshing")) {
-            // If the flag exists, scroll to the top
-            window.scrollTo(0, 0);
-            sessionStorage.removeItem("isRefreshing"); // Clear the flag
-        }
-
-        // Set the flag when the page is about to unload
-        window.addEventListener("beforeunload", function () {
-            sessionStorage.setItem("isRefreshing", "true");
-            setMounted(true)
-        });
-    };
-
-    toPageTop(); // Call the function when the component mounts
 
     return (
         <div className={`${styles.animeWrap} ${isSmallDevice ? styles.smallDevice : ""}`}>
