@@ -28,7 +28,6 @@ const MinframeAnime = () => {
     const isSmallDevice = useMediaQuery({ maxWidth: 992 });
 
     useGSAP(() => {
-        let mounted = false;
         const section = document.querySelector("#mainframe"); // Find the section by ID
         if (section) {
             // Use GSAP's scrollTo for smooth scroll
@@ -37,141 +36,142 @@ const MinframeAnime = () => {
                 scrollTo: section,
                 ease: "power2.inOut",
                 onComplete: () => {
-                    mounted = true;
-                },
-            });
-        }
 
-        // Animation logic
-        if (logoRef.current && locationCardsRef.current && pLogoRef.current && mounted) {
-            if (!isSmallDevice) {
-                gsap.set(document.body, { overflow: "hidden" });
-            }
+                    // Animation logic
+                    if (logoRef.current && locationCardsRef.current && pLogoRef.current) {
+                        if (!isSmallDevice) {
+                            gsap.set(document.body, { overflow: "hidden" });
+                        }
 
-            gsap.set(pLogoRef.current, { autoAlpha: 0 });
-            gsap.set(arrowDown.current, { autoAlpha: 1 });
+                        gsap.set(pLogoRef.current, { autoAlpha: 0 });
+                        gsap.set(arrowDown.current, { autoAlpha: 1 });
 
-            // Logo Animation
-            gsap.to(logoRef.current, {
-                duration: 1,
-                keyframes: {
-                    "0%": { width: 0, opacity: 0 },
-                    "70%": { width: '10rem', opacity: 0.4 },
-                    "100%": { width: "40rem", opacity: 1 },
-                },
-                stagger: 0.2,
-                ease: "power2.inOut",
-                onComplete: function () {
-                    logoRef.current.play();
-                    gsap.delayedCall(3, () => {
+                        // Logo Animation
                         gsap.to(logoRef.current, {
                             duration: 1,
-                            position: "relative",
-                            width: "165px",
-                            top: "-5px",
-                            left: "40px",
-                            transform: "translate(0, 0)",
+                            keyframes: {
+                                "0%": { width: 0, opacity: 0 },
+                                "70%": { width: '10rem', opacity: 0.4 },
+                                "100%": { width: "40rem", opacity: 1 },
+                            },
+                            stagger: 0.2,
                             ease: "power2.inOut",
                             onComplete: function () {
-                                gsap.to(pLogoRef.current, { autoAlpha: 1, duration: 0 });
-                                gsap.set(navbarBrand.current, { position: "fixed" });
+                                logoRef.current.play();
+                                gsap.delayedCall(3, () => {
+                                    gsap.to(logoRef.current, {
+                                        duration: 1,
+                                        position: "relative",
+                                        width: "165px",
+                                        top: "-5px",
+                                        left: "40px",
+                                        transform: "translate(0, 0)",
+                                        ease: "power2.inOut",
+                                        onComplete: function () {
+                                            gsap.to(pLogoRef.current, { autoAlpha: 1, duration: 0 });
+                                            gsap.set(navbarBrand.current, { position: "fixed" });
 
-                                gsap.to(pLogoRef.current, {
-                                    width: "100px",
-                                    top: "12px",
-                                    left: "210px",
+                                            gsap.to(pLogoRef.current, {
+                                                width: "100px",
+                                                top: "12px",
+                                                left: "210px",
+                                                transform: "translate(0, 0)",
+                                                ease: "power2.inOut",
+                                            });
+
+                                            // Activate menu
+                                            setMenuActive(true)
+
+                                            // Play pLogoRef video
+                                            pLogoRef.current.play();
+
+                                            // Play locationCardsRef video
+                                            locationCardsRef.current.play();
+                                            const locationCards = gsap.utils.toArray([locationCardsRef.current, pLogoRef.current]);
+                                            locationCards.forEach((card: any) => {
+                                                const anim = gsap.fromTo(card, { autoAlpha: 0, y: 50 }, { duration: 1, autoAlpha: 1, y: 0 });
+                                                ScrollTrigger.create({
+                                                    trigger: card,
+                                                    animation: anim,
+                                                    toggleActions: "play none none none",
+                                                    once: true,
+                                                });
+                                            });
+
+                                            gsap.to(document.body, { overflowY: "auto" });
+                                            gsap.to(arrowDown.current, { autoAlpha: 1, duration: 1 });
+                                        },
+                                    });
+                                });
+                            },
+                        });
+
+                        // ScrollTrigger for the logo
+                        ScrollTrigger.create({
+                            trigger: logoRef.current,
+                            start: "top top",
+                            end: "bottom top",
+                            onEnterBack: () => {
+                                gsap.to(logoRef.current, {
+                                    duration: 1,
+                                    width: "40rem",
+                                    top: "50%",
+                                    left: "50%",
+                                    transform: "translate(-50%, 250%)",
+                                    ease: "power2.inOut",
+                                });
+                            },
+                            onLeave: () => {
+                                gsap.to(logoRef.current, {
+                                    duration: 1,
+                                    width: "165px",
+                                    top: "-5px",
+                                    left: "40px",
                                     transform: "translate(0, 0)",
                                     ease: "power2.inOut",
                                 });
-
-                                // Activate menu
-                                setMenuActive(true)
-
-                                // Play pLogoRef video
-                                pLogoRef.current.play();
-
-                                // Play locationCardsRef video
-                                locationCardsRef.current.play();
-                                const locationCards = gsap.utils.toArray([locationCardsRef.current, pLogoRef.current]);
-                                locationCards.forEach((card: any) => {
-                                    const anim = gsap.fromTo(card, { autoAlpha: 0, y: 50 }, { duration: 1, autoAlpha: 1, y: 0 });
-                                    ScrollTrigger.create({
-                                        trigger: card,
-                                        animation: anim,
-                                        toggleActions: "play none none none",
-                                        once: true,
-                                    });
+                            },
+                            onEnter: () => {
+                                gsap.to(logoRef.current, {
+                                    duration: 1,
+                                    width: "165px",
+                                    top: "-5px",
+                                    left: "40px",
+                                    transform: "translate(0, 0)",
+                                    ease: "power2.inOut",
                                 });
-
-                                gsap.to(document.body, { overflowY: "auto" });
-                                gsap.to(arrowDown.current, { autoAlpha: 1, duration: 1 });
                             },
                         });
-                    });
-                },
-            });
 
-            // ScrollTrigger for the logo
-            ScrollTrigger.create({
-                trigger: logoRef.current,
-                start: "top top",
-                end: "bottom top",
-                onEnterBack: () => {
-                    gsap.to(logoRef.current, {
-                        duration: 1,
-                        width: "40rem",
-                        top: "50%",
-                        left: "50%",
-                        transform: "translate(-50%, 250%)",
-                        ease: "power2.inOut",
-                    });
-                },
-                onLeave: () => {
-                    gsap.to(logoRef.current, {
-                        duration: 1,
-                        width: "165px",
-                        top: "-5px",
-                        left: "40px",
-                        transform: "translate(0, 0)",
-                        ease: "power2.inOut",
-                    });
-                },
-                onEnter: () => {
-                    gsap.to(logoRef.current, {
-                        duration: 1,
-                        width: "165px",
-                        top: "-5px",
-                        left: "40px",
-                        transform: "translate(0, 0)",
-                        ease: "power2.inOut",
-                    });
-                },
-            });
+                        // ScrollTrigger to hide arrowDown when scrolling down
+                        ScrollTrigger.create({
+                            trigger: "#section2",
+                            start: "top bottom",
+                            end: "top top",
+                            onEnter: () => gsap.to(arrowDown.current, { autoAlpha: 0, duration: 0.5 }),
+                            onLeaveBack: () => gsap.to(arrowDown.current, { autoAlpha: 1, duration: 0.5 }),
+                        });
 
-            // ScrollTrigger to hide arrowDown when scrolling down
-            ScrollTrigger.create({
-                trigger: "#section2",
-                start: "top bottom",
-                end: "top top",
-                onEnter: () => gsap.to(arrowDown.current, { autoAlpha: 0, duration: 0.5 }),
-                onLeaveBack: () => gsap.to(arrowDown.current, { autoAlpha: 1, duration: 0.5 }),
-            });
+                        gsap.set([locationCardsRef.current], { autoAlpha: 0 });
 
-            gsap.set([locationCardsRef.current], { autoAlpha: 0 });
+                        gsap.to(locationCardsRef.current, {
+                            scrollTrigger: {
+                                trigger: locationCardsRef.current,
+                                start: "top center",
+                                end: "bottom top",
+                                scrub: 3,
+                                markers: false,
+                                onLeave: () => gsap.to([locationCardsRef.current, pLogoRef.current], { autoAlpha: 0, duration: 2 }),
+                            },
+                            autoAlpha: 0,
+                            duration: 2,
+                        });
+                    }
 
-            gsap.to(locationCardsRef.current, {
-                scrollTrigger: {
-                    trigger: locationCardsRef.current,
-                    start: "top center",
-                    end: "bottom top",
-                    scrub: 3,
-                    markers: false,
-                    onLeave: () => gsap.to([locationCardsRef.current, pLogoRef.current], { autoAlpha: 0, duration: 2 }),
                 },
-                autoAlpha: 0,
-                duration: 2,
             });
         }
+
 
         // Cleanup function to remove ScrollTriggers on component unmount
         return () => {
