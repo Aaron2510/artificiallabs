@@ -41,7 +41,7 @@ const OurTeam = () => {
                         <FigureCaption className={styles.figCaption}>
                             <h2>Carl Savio</h2>
                             <h3>Executive Director/Co-Founder</h3>
-                            <p> <strong>Carl Savio</strong> is a writer, reative technologist and
+                            <p> <strong>Carl Savio</strong> is a writer, Creative technologist and
                                 film director with over 20 years of experience...</p>
                             <AppButton variant="link" >Read more</AppButton>
                         </FigureCaption>
