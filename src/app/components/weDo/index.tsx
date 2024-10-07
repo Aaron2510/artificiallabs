@@ -39,6 +39,11 @@ const WeDo = () => {
         { title: "Yahin Hai Zindagi", src: "/audios/YAHIN HAI ZINDAGI.mp3" },
     ];
 
+    const handleMailTo = (email: string) => {
+        // Set the mailto link dynamically
+        window.open(`mailto:${email}`, '_self');
+    };
+
     return (
         <>
             <div className={styles.imageGrid}>
@@ -52,9 +57,9 @@ const WeDo = () => {
                 <Modal.Header className={styles.modalTitle}>
                     <Modal.Title >
                         Social Media Content
-                        <Link className={`${styles.hrefBtn} btn btn-primary`} href="mailto:aaron@bluebot.in">
+                        <AppButton  className={`${styles.hrefBtn} btn btn-primary`} onClick={() => handleMailTo('aaron@bluebot.in')}>
                             Brand Videos
-                        </Link>
+                        </AppButton>
                     </Modal.Title>
                     <AppButton variant="transparent" className={styles.btnClose} onClick={handleClose} >
                         <FontAwesomeIcon icon={faClose} className="fa-fw" />
@@ -79,9 +84,9 @@ const WeDo = () => {
                 <Modal.Header className={styles.modalTitle}>
                     <Modal.Title>
                         Social Media Content
-                        <Link className={`${styles.hrefBtn} btn btn-primary`} href="mailto:aaron@bluebot.in">
+                        <AppButton  className={`${styles.hrefBtn} btn btn-primary`} onClick={() => handleMailTo('aaron@bluebot.in')}>
                             Brand Videos
-                        </Link>
+                        </AppButton>
                     </Modal.Title>
                     <AppButton variant="transparent" className={styles.btnClose} onClick={handleClose} >
                         <FontAwesomeIcon icon={faClose} className="fa-fw" />
