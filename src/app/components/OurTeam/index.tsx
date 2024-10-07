@@ -94,12 +94,7 @@ const OurTeam = () => {
                                 <h3>Executive Director/Co-Founder</h3>
                                 <p >
                                     <strong>Vinod Sekhar</strong> is the Chairman of the Petra group,
-                                    a global conglomerate that embraces technological innovation across sectors to create positive social and
-                                    economic change. With his strong passion for filmmaking, Vinod has produced notable Hollywood films such as The
-                                    Legend of Tarzan and has won three prestigious awards at the Tapeu Golden Horse awards for his Hongkong produced
-                                    film The Sunny Side of the Street. Incidentally Vinod has also produced India’s first Oscar Nominated film -
-                                    Liars Dice. He is currently working on his own feature while mentoring Artificial to become a global Gen AI
-                                    powerhouse.
+                                    a global conglomerate that embraces technological innovation across sectors to create positive social and economic change. With his strong passion for filmmaking, Vinod has produced notable Hollywood films such as The Legend of Tarzan, and has won three prestigious awards at the Taipei Golden Horse Awards for his Hong Kong produced film The Sunny Side of the Street. Incidentally, Vinod has also produced Liars Dice, which was India's official entry at the 87th Academy Awards for Best Foreign Language Film. He is currently working on his own feature while mentoring Artificial to become a global Gen AI powerhouse.
                                 </p>
                             </>
                         ) : <>

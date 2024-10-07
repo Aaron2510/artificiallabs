@@ -1,5 +1,6 @@
+import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Figure, Modal, Carousel } from "react-bootstrap";
 import styles from './wedo.module.scss';
 import AppButton from '../AppButton';
@@ -49,7 +50,12 @@ const WeDo = () => {
             {/* MODAL 1 - Video Carousel */}
             <Modal show={show && modalData === 1} size="lg" onHide={handleClose} className="modal-social modal-one" centered >
                 <Modal.Header className={styles.modalTitle}>
-                    <Modal.Title >Social Media Content</Modal.Title>
+                    <Modal.Title >
+                        Social Media Content
+                        <Link className={`${styles.hrefBtn} btn btn-primary`} href="mailto:info@meryalwaterpark.com">
+                            Request Video
+                        </Link>
+                    </Modal.Title>
                     <AppButton variant="transparent" className={styles.btnClose} onClick={handleClose} >
                         <FontAwesomeIcon icon={faClose} className="fa-fw" />
                     </AppButton>
