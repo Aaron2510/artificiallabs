@@ -52,8 +52,8 @@ const WeDo = () => {
                 <Modal.Header className={styles.modalTitle}>
                     <Modal.Title >
                         Social Media Content
-                        <Link className={`${styles.hrefBtn} btn btn-primary`} href="mailto:info@meryalwaterpark.com">
-                            Request Video
+                        <Link className={`${styles.hrefBtn} btn btn-primary`} href="mailto:aaron@bluebot.in">
+                            Brand Videos
                         </Link>
                     </Modal.Title>
                     <AppButton variant="transparent" className={styles.btnClose} onClick={handleClose} >
@@ -77,7 +77,12 @@ const WeDo = () => {
             {/* MODAL 2 - Single Video */}
             <Modal show={show && modalData === 2} size="lg" onHide={handleClose} className="modal-social modal-two" centered>
                 <Modal.Header className={styles.modalTitle}>
-                    <Modal.Title>Social Media Content</Modal.Title>
+                    <Modal.Title>
+                        Social Media Content
+                        <Link className={`${styles.hrefBtn} btn btn-primary`} href="mailto:aaron@bluebot.in">
+                            Brand Videos
+                        </Link>
+                    </Modal.Title>
                     <AppButton variant="transparent" className={styles.btnClose} onClick={handleClose} >
                         <FontAwesomeIcon icon={faClose} className="fa-fw" />
                     </AppButton>
