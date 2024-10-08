@@ -56,9 +56,9 @@ const WeDo = () => {
             <Modal show={show && modalData === 1} size="lg" onHide={handleClose} className="modal-social modal-one" centered >
                 <Modal.Header className={styles.modalTitle}>
                     <Modal.Title >
-                        Social Media Content
-                        <AppButton  className={`${styles.hrefBtn} btn btn-primary`} onClick={() => handleMailTo('aaron@bluebot.in')}>
-                            Brand Videos
+                        Brand Videos
+                        <AppButton className={`${styles.hrefBtn} btn btn-primary`} onClick={() => handleMailTo('aaron@bluebot.in')}>
+                            Request Video
                         </AppButton>
                     </Modal.Title>
                     <AppButton variant="transparent" className={styles.btnClose} onClick={handleClose} >
@@ -83,9 +83,9 @@ const WeDo = () => {
             <Modal show={show && modalData === 2} size="lg" onHide={handleClose} className="modal-social modal-two" centered>
                 <Modal.Header className={styles.modalTitle}>
                     <Modal.Title>
-                        Social Media Content
-                        <AppButton  className={`${styles.hrefBtn} btn btn-primary`} onClick={() => handleMailTo('aaron@bluebot.in')}>
-                            Brand Videos
+                        Brand Videos
+                        <AppButton className={`${styles.hrefBtn} btn btn-primary`} onClick={() => handleMailTo('aaron@bluebot.in')}>
+                            Request Video
                         </AppButton>
                     </Modal.Title>
                     <AppButton variant="transparent" className={styles.btnClose} onClick={handleClose} >

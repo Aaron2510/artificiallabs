@@ -63,7 +63,7 @@ const OurTeam = () => {
                         <Image src="/Daniel.png" alt="team" fill />
                         <FigureCaption className={styles.figCaption}>
                             <h2>Daniel Cherian</h2>
-                            <p>Studio Head</p>
+                            <p>Creative Studio Head</p>
                         </FigureCaption>
                     </div>
                 </Figure>
