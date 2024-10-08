@@ -83,7 +83,7 @@ const WeDo = () => {
             <Modal show={show && modalData === 2} size="lg" onHide={handleClose} className="modal-social modal-two" centered>
                 <Modal.Header className={styles.modalTitle}>
                     <Modal.Title>
-                        Brand Videos
+                        Social media content
                         <AppButton className={`${styles.hrefBtn} btn btn-primary`} onClick={() => handleMailTo('aaron@bluebot.in')}>
                             Request Video
                         </AppButton>
