@@ -58,7 +58,7 @@ const MinframeAnime = () => {
                             ease: "power2.inOut",
                             onComplete: function () {
                                 logoRef.current.play();
-                                gsap.delayedCall(1.5, () => {
+                                gsap.delayedCall(1, () => {
                                     gsap.to(logoRef.current, {
                                         duration: 1,
                                         position: "relative",
