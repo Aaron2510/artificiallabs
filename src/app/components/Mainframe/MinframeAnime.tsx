@@ -187,7 +187,7 @@ const MinframeAnime = () => {
                     <Image className={styles.locationAnime} src="/location.gif" alt="location" width={800} height={282} />
                 ) : (
                     <>
-                        <Link className={styles.navBrand} href="/">
+                        <Link className={styles.navBrand} href="/" ref={navbarBrand}>
                             <video className="logo" ref={logoRef} muted autoPlay>
                                 <source src="./videos/Logo.webm" type="video/webm" />
                                 Your browser does not support the video tag.
