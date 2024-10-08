@@ -9,7 +9,9 @@ const OurClients = () => {
     { src: "/N2.png", alt: "Client 2", width: 250, height: 100 },
     { src: "/INBREW.png", alt: "Client 3", width: 250, height: 100 },
     { src: "/P&G.png", alt: "Client 4", width: 250, height: 100 },
-    { src: "/UL.png", alt: "Client 5", width: 250, height: 100 }
+    { src: "/UL.png", alt: "Client 5", width: 250, height: 100 },
+    { src: "/H&S-logo-4k.png", alt: "Client 6", width: 250, height: 100 },
+    { src: "/Tide_print.png", alt: "Client 7", width: 250, height: 100 },
   ];
 
   return (
