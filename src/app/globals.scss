@@ -23,6 +23,25 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: 'VALORANT';
+  src: url('/fonts/VALORANT-Regular.woff2') format('woff2'),
+      url('/fonts/VALORANT-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Spaced';
+  src: url('/fonts/Spaced-Regular.woff2') format('woff2'),
+      url('/fonts/Spaced-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar {
   display: none;
@@ -147,7 +166,8 @@ video {
 .titles {
   font-size: 50px;
   font-weight: 500;
-
+  font-family: 'VALORANT';
+  
   /* font-weight: 600; */
   padding: 0 20px 50px 20px;
 
