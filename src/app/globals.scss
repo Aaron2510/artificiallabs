@@ -41,6 +41,17 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Courier New';
+  src: url('/fonts/CourierNewPSMT.woff2') format('woff2'),
+      url('/fonts/CourierNewPSMT.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar {
