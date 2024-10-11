@@ -1,15 +1,20 @@
-.clientImages{
-    gap: 1rem;
+.clientImages {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    flex-wrap: wrap;
 
-    img{
-        max-width: 200px;
-        height: auto;
+    .imageContainer {
+        flex-basis: 30%;
+        padding: 1rem;
+
+        img{
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
         @media (max-width: 767.98px) {
-            max-width: 150px;
+            width: 50%;
         }
     }
 }

@@ -45,18 +45,16 @@ const Header = ({ menuActive }: any) => {
 
   // GSAP effect to hide/show the logo on scroll
   useGSAP(() => {
-    if (!mounted && !petraLogoRef.current) return;
-
+    if (!mounted || !petraLogoRef.current) return; // Ensure mounted and ref are available
 
     gsap.to(petraLogoRef.current, {
-      y: -100, // Move the logo up to hide it
-      opacity: 0,
+      opacity: 0, // Set opacity to 0 to hide
       ease: 'power2.out',
-      duration: 0.5,
+      duration: 0.2, // Reduced duration for quicker fade-out
       scrollTrigger: {
         trigger: document.body,
-        start: 'top+=100 top', // Start 100px from the top
-        end: 'bottom',
+        start: 'top+=50 top', // Start 50px from the top for quicker effect
+        end: 500,
         toggleActions: 'play none reverse none', // Play when scrolling down, reverse when scrolling up
         scrub: true,
       },
@@ -65,13 +63,14 @@ const Header = ({ menuActive }: any) => {
     ScrollTrigger.create({
       trigger: document.body,
       start: 'top+=10 top',
-      end: 'bottom',
-      onEnterBack: () => gsap.to(petraLogoRef.current, { y: 0, opacity: 1, duration: 0.5 }),
-      onLeave: () => gsap.to(petraLogoRef.current, { y: -100, opacity: 0, duration: 0.5 }),
+      end: 500,
+      onEnterBack: () => gsap.to(petraLogoRef.current, { opacity: 1, duration: 0 }), // Fade in when scrolling back
+      onLeave: () => gsap.to(petraLogoRef.current, { opacity: 0, duration: 0 }), // Fade out when leaving
     });
 
     return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-  }, [mounted]);
+  }, [mounted, petraLogoRef]);
+
 
   // GSAP animation for menu links
   useGSAP(() => {
@@ -136,7 +135,7 @@ const Header = ({ menuActive }: any) => {
       ) : (
         <Navbar expand='lg' className={styles.navbarWrap}>
           <Container className={styles.container}>
-            <Nav className={`${styles.navbar} ${menuActive ? styles.active: styles.disabled}`}>
+            <Nav className={`${styles.navbar} ${menuActive ? styles.active : styles.disabled}`}>
               <a href='#mainframe' onClick={(e) => handleScroll(e, '#mainframe')} >Home</a>
               <a href='#what-we-do' onClick={(e) => handleScroll(e, '#what-we-do')}>Our Work</a>
               <a href='#meet-our-team' onClick={(e) => handleScroll(e, '#meet-our-team')}>Our Team</a>
