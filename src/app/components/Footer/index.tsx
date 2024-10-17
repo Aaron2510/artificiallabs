@@ -20,10 +20,10 @@ const Footer = () => {
                     <Row className={`${styles.row} justify-space-between`}>
                         <Col>
                             <Logo />
-                            <p >
+{/*                             <p >
                                 Devatha Plaza 606, 6th Floor, Field Marshal Cariappa Rd, Shanthala
                                 Nagar, Ashok Nagar, Bengaluru, Karnataka 560025
-                            </p>
+                            </p> */}
                         </Col>
                         <Col >
                             <h5>Contact Details</h5>
