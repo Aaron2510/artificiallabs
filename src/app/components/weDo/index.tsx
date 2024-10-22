@@ -27,7 +27,9 @@ const WeDo = () => {
         "/videos/ratcity.mp4",
         "/videos/urbanLadder3.mp4",
         "./assets/videos/urbanLadder4.mp4",
-        "/videos/urbanLadder5.mp4"
+        "/videos/urbanLadder5.mp4",
+        "/videos/iAEX1.mp4",
+        "/videos/iAEX2.mp4"
     ];
 
     // Array of audio data for the third modal
