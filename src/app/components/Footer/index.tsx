@@ -6,7 +6,7 @@ import Link from 'next/link'
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInstagram, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faLinkedin, faYoutube, faXtwitter } from '@fortawesome/free-brands-svg-icons';
 import styles from './footer.module.scss'
 
 // assets
