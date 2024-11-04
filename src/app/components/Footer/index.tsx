@@ -37,6 +37,7 @@ const Footer = () => {
                                 <Link href="http://www.youtube.com/@ArtificialLabsAI" target="blank"><FontAwesomeIcon icon={faYoutube} className="fa-fw" /></Link>
                                 <Link href="https://www.instagram.com/artificiallabs.in/" target="blank"><FontAwesomeIcon icon={faInstagram} className="fa-fw" /></Link>
                                 <Link href="https://www.linkedin.com/company/artificial-labs/" target="blank"><FontAwesomeIcon icon={faLinkedin} className="fa-fw" /></Link>
+                                <Link href="http://www.youtube.com/@ArtificialLabsAI" target="blank"><FontAwesomeIcon icon={faYoutube} className="fa-fw" /></Link>
                                 <Link href="#" target="blank"><FontAwesomeIcon icon={faXtwitter} className="fa-fw" /></Link>
                             </div>
                         </Col>
