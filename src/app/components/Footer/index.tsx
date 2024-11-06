@@ -6,7 +6,7 @@ import Link from 'next/link'
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInstagram, faLinkedin, faYoutube, faXtwitter } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faLinkedin, faYoutube, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import styles from './footer.module.scss'
 
 // assets
@@ -18,7 +18,7 @@ const Footer = () => {
             <div className={styles.footerTop}>
                 <Container>
                     <Row className={`${styles.row} justify-space-between`}>
-                        <Col>
+                <Col className={`d-flex`}>
                             <Logo />
 {/*                             <p >
                                 Devatha Plaza 606, 6th Floor, Field Marshal Cariappa Rd, Shanthala
@@ -37,7 +37,7 @@ const Footer = () => {
                                 <Link href="http://www.youtube.com/@ArtificialLabsAI" target="blank"><FontAwesomeIcon icon={faYoutube} className="fa-fw" /></Link>
                                 <Link href="https://www.instagram.com/artificiallabs.in/" target="blank"><FontAwesomeIcon icon={faInstagram} className="fa-fw" /></Link>
                                 <Link href="https://www.linkedin.com/company/artificial-labs/" target="blank"><FontAwesomeIcon icon={faLinkedin} className="fa-fw" /></Link>
-                                <Link href="http://www.youtube.com/@ArtificialLabsAI" target="blank"><FontAwesomeIcon icon={faYoutube} className="fa-fw" /></Link>
+                                <Link href="https://x.com/_ArtificialLabs" target="blank"><FontAwesomeIcon icon={faXTwitter} className="fa-fw" /></Link>
                             </div>
                         </Col>
                     </Row>
