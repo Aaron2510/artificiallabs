@@ -30,7 +30,7 @@ const OurTeam = () => {
                         <FigureCaption className={styles.figCaption}>
                             <h2>Vinod Sekhar</h2>
                             <h3>Executive Director/Co-Founder</h3>
-                            <p><strong>Vinod Sekhar</strong> is the Chairman of the Petra group, economic change...</p>
+                            <p><strong>Datuk Vinod Sekhar</strong> is the Chairman of the Petra group, economic change...</p>
                             <AppButton variant="link" >Read more</AppButton>
                         </FigureCaption>
                     </div>
@@ -93,19 +93,14 @@ const OurTeam = () => {
                                 <h2>Vinod Sekhar</h2>
                                 <h3>Executive Director/Co-Founder</h3>
                                 <p >
-                                    <strong>Vinod Sekhar</strong> is the Chairman of the Petra group,
-                                    a global conglomerate that embraces technological innovation across sectors to create positive social and economic change. With his strong passion for filmmaking, Vinod has produced notable Hollywood films such as The Legend of Tarzan, and has won three prestigious awards at the Taipei Golden Horse Awards for his Hong Kong produced film The Sunny Side of the Street. Incidentally, Vinod has also produced Liars Dice, which was India's official entry at the 87th Academy Awards for Best Foreign Language Film. He is currently working on his own feature while mentoring Artificial to become a global Gen AI powerhouse.
-                                </p>
+                                    <strong>Datuk Vinod Sekhar</strong> is the Chairman of the Petra group, a global conglomerate that embraces technological innovation across industries to create positive social and economic change. With his strong passion for filmmaking, Vinod created Petra Media that has gone on to produce notable Hollywood films such as ‘The Legend of Tarzan’. Petra Media has also won three prestigious awards at the Taipei Golden Horse Awards for his Hong Kong produced film ‘The Sunny Side of the Street’. Incidentally, Vinod has also produced ‘Liar’s Dice’, which was India's official entry at the 87th Academy Awards for Best Foreign Language Film.
+                                    <br />The recipient of many prestigious Asian and Global awards, Vinod is playing a key role in mentoring Artificial Labs to become a global Gen AI powerhouse.</p>
                             </>
                         ) : <>
                             <h2>Carl Savio</h2>
                             <h3>Executive Director/Co-Founder</h3>
                             <p>
-                                <strong>Carl Savio</strong> is a writer, creative technologist and
-                                film director with over 20 years of experience. He is also the founder of Bluebot Digital, an award-winning
-                                creative agency established in 2014 that works closely with some of India’s leading brands. With his strong
-                                understanding of traditional film making techniques he’s now looking forward to create real-world value and
-                                impact with Artificial Labs.
+                                <strong>Carl Savio</strong> is an award-winning writer, creative technologist and filmmaker with over 20 years of experience in advertising and filmmaking. His experience spans across categories ranging from fashion, FMCG, fintech, edtech and automotive. He had held senior roles in India’s leading agencies before going on to found Bluebot Digital in 2014 and Bluebot Films in 2019. With his strong and tested understanding of traditional filmmaking techniques, he’s now looking forward to create real-world value and impact with Artificial Labs.
                             </p>
                         </>
                         }

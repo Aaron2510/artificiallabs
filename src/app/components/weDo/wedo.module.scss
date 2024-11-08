@@ -6,8 +6,8 @@
     justify-content: space-evenly;
 
     figure {
-        width: 250px;
-        height: 400px;
+        width: 180px;
+        height: 330px;
         cursor: pointer;
         margin-bottom: 2rem;
         border-radius: 1rem;
@@ -53,6 +53,21 @@
                 font-weight: 600;
                 transform: scale(1.2);
                 background-image: url("/music_gradient_work.png");
+
+                @media (max-width: 1199.98px) {
+                    transform: scale(1.07);
+                }
+            }
+        }
+
+        &.gridFour {
+            background-image: url("/visual_work.png");
+
+            &:hover {
+                font-size: 25px;
+                font-weight: 600;
+                transform: scale(1.2);
+                background-image: url("/visual_gradient_work.png");
 
                 @media (max-width: 1199.98px) {
                     transform: scale(1.07);
@@ -122,5 +137,41 @@
 
     .btnClose {
         color: white;
+    }
+}
+
+.visualsForModal4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .visualImageContainer {
+        flex-basis: 50%;
+        padding: 1rem;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 1s;
+
+        img {
+            max-width: 400px;
+            margin: 0 auto;
+            height: auto;
+
+            @media (max-width: 767.98px) {
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            width: 100%;
+        }
+    }
+    .visualImageContainer:hover {
+        transform: scale(1.4);
+
+        @media (max-width: 1199.98px) {
+            transform: scale(1.2);
+        }
     }
 }

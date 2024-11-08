@@ -6,6 +6,7 @@ import styles from './wedo.module.scss';
 import AppButton from '../AppButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose } from "@fortawesome/free-solid-svg-icons";
+import { height } from '@fortawesome/free-brands-svg-icons/fa42Group';
 
 const WeDo = () => {
     const [show, setShow] = useState(false);
@@ -32,6 +33,12 @@ const WeDo = () => {
         "/videos/iAEX2.mp4"
     ];
 
+    // Array of video URLs for carousel
+    const videosForModal2 = [
+        "/videos/narayana_1.mp4",
+        "/videos/narayana.mp4",
+    ];
+
     // Array of audio data for the third modal
     const audiosForModal3 = [
         { title: "Ab Chal Diye", src: "/audios/AB CHAL DIYE.mp3" },
@@ -39,6 +46,14 @@ const WeDo = () => {
         { title: "Khwaabon Ka Jahan", src: "/audios/KHWAABON KA JAHAN.mp3" },
         { title: "Milenge Wahan", src: "/audios/MILENGE WAHAN.mp3" },
         { title: "Yahin Hai Zindagi", src: "/audios/YAHIN HAI ZINDAGI.mp3" },
+    ];
+
+    // Array of images URLs for fourth model
+    const visualsForModal4 = [
+        { src: "/visual_pantene_1.jpg", alt: "Pantene1", width: 400, height: 300 },
+        { src: "/visual_pantene_2.jpg", alt: "Pantene2", width: 400, height: 300 },
+        { src: "/visual_pantene_3.jpg", alt: "Pantene3", width: 400, height: 300 },
+        { src: "/visual_pantene_4.jpg", alt: "Pantene4", width: 400, height: 300 }
     ];
 
     const handleMailTo = (email: string) => {
@@ -52,6 +67,7 @@ const WeDo = () => {
                 <Figure className={styles.gridOne} onClick={() => handleShow(1)} />
                 <Figure className={styles.gridTwo} onClick={() => handleShow(2)} />
                 <Figure className={styles.gridThree} onClick={() => handleShow(3)} />
+                <Figure className={styles.gridFour} onClick={() => handleShow(4)} />
             </div>
 
             {/* MODAL 1 - Video Carousel */}
@@ -95,10 +111,24 @@ const WeDo = () => {
                     </AppButton>
                 </Modal.Header>
                 <Modal.Body>
+                    <Carousel interval={null} controls={false}>
+                        {videosForModal2.map((videoSrc, index) => (
+                            <Carousel.Item key={index}>
+                                <video controls muted>
+                                    <source src={videoSrc} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </Carousel.Item>
+                        ))}
+                    </Carousel>
+                    {/* <video controls muted>
+                        <source src="/videos/narayana_1.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
                     <video controls muted>
                         <source src="/videos/narayana.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
-                    </video>
+                    </video> */}
                 </Modal.Body>
             </Modal>
 
@@ -124,6 +154,28 @@ const WeDo = () => {
                             </audio>
                         </div>
                     ))}
+                </Modal.Body>
+            </Modal>
+
+            {/* MODAL 4 - Visual */}
+            <Modal show={show && modalData === 4} size="xl" onHide={handleClose} className={`${styles.modalFour} modal-social modal-four`} centered>
+                <Modal.Header className={styles.modalTitle}>
+                    <Modal.Title>Visual Merchandising</Modal.Title>
+                    <AppButton variant="transparent" className={styles.btnClose} onClick={handleClose} >
+                        <FontAwesomeIcon icon={faClose} className="fa-fw" />
+                    </AppButton>
+                </Modal.Header>
+                <Modal.Body>
+                    <div className={styles.insideContent}>
+                        <h1>Pantene - Banner</h1>
+                    </div>
+                    <div className={styles.visualsForModal4}>
+                        {visualsForModal4.map((visual, index) => (
+                            <div className={styles.visualImageContainer} key={index}>
+                                <Image key={index} src={visual.src} alt={visual.alt} width={visual.width} height={visual.height} />
+                            </div>
+                        ))}
+                    </div>
                 </Modal.Body>
             </Modal>
         </>
