@@ -122,10 +122,6 @@ const WeDo = () => {
                         ))}
                     </Carousel>
                     {/* <video controls muted>
-                        <source src="/videos/narayana_1.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                    <video controls muted>
                         <source src="/videos/narayana.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video> */}
@@ -167,7 +163,7 @@ const WeDo = () => {
                 </Modal.Header>
                 <Modal.Body>
                     <div className={styles.insideContent}>
-                        <h1>Pantene - Banner</h1>
+                        <h1>Pantene - Web Banner</h1>
                     </div>
                     <div className={styles.visualsForModal4}>
                         {visualsForModal4.map((visual, index) => (
