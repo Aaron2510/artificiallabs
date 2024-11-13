@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
@@ -14,30 +14,30 @@ import { DefaultSeo } from 'next-seo';
 const poppins = Poppins({ subsets: ["latin"], variable: '--font-poppins', display: "swap", weight: ['300', '400', '500', '600', '700', '800'] });
 config.autoAddCss = false;
 
-// export const metadata: Metadata = {
-//   title: "Artificial Labs",
-//   description: "Generative AI based creative powerhouse",
-//   robots: "index, follow",
-//   type: "website",
-//   url: "https://www.artificiallabs.in",
-//   canonical: "https://www.artificiallabs.in",
-//   image: "https://www.artificiallabs.in/artificial-logo.png",
-//   openGraph: {
-//     title: "Artificial Labs",                   
-//     description: "Generative AI based creative powerhouse",   
-//     url: "https://www.artificiallabs.in",        
-//     images: [
-//       {
-//         url: "https://www.artificiallabs.in/artificial-logo.png", 
-//         width: 1200,                               
-//         height: 630                                
-//       }
-//     ]
-//   },
-//   icons: {
-//     icon: "/favicon.ico"
-//   }
-// };
+export const metadata: Metadata = {
+  title: "Artificial Labs",
+  description: "Generative AI based creative powerhouse",
+  robots: "index, follow",
+  // type: "website",
+  // url: "https://www.artificiallabs.in",
+  // canonical: "https://www.artificiallabs.in",
+  // image: "https://www.artificiallabs.in/artificial-logo.png",
+  openGraph: {
+    title: "Artificial Labs",                   
+    description: "Generative AI based creative powerhouse",   
+    url: "https://www.artificiallabs.in",        
+    images: [
+      {
+        url: "https://www.artificiallabs.in/a.png", 
+        width: 1200,                               
+        height: 630                                
+      }
+    ]
+  },
+  icons: {
+    icon: "/favicon.ico"
+  }
+};
 
 export default function RootLayout({
   children,
@@ -47,31 +47,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.variable}>
-        <DefaultSeo
-          title="Artificial Labs"
-          description="Generative AI based creative powerhouse"
-          canonical="https://www.artificiallabs.in"
-          openGraph={{
-            type: 'website',
-            url: 'https://www.artificiallabs.in',
-            title: 'Artificial Labs',
-            description: 'Generative AI based creative powerhouse',
-            images: [
-              {
-                url: 'https://www.artificiallabs.in/artificial-logo.png',
-                width: 1200,
-                height: 630,
-                alt: 'Artificial Labs Logo',
-              },
-            ],
-          }}
-          additionalLinkTags={[
-            {
-              rel: 'icon',
-              href: '/favicon.ico',
-            },
-          ]}
-        />
         {children}
         <Footer />
       </body>
