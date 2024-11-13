@@ -47,7 +47,7 @@ export default function RootLayout({
       <body className={poppins.variable}>
         <DefaultSeo
           title="Artificial Labs"
-          description="Generative AI based creative powerhouse."
+          description="Generative AI based creative powerhouse"
           canonical="https://www.artificiallabs.in"
           openGraph={{
             type: 'website',
