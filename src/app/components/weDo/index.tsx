@@ -27,16 +27,35 @@ const WeDo = () => {
         "/videos/greenLabel1.mp4",
         "/videos/ratcity.mp4",
         "/videos/urbanLadder3.mp4",
-        "./assets/videos/urbanLadder4.mp4",
-        "/videos/urbanLadder5.mp4",
+        "/videos/urbanLadder4.mp4",
         "/videos/iAEX1.mp4",
         "/videos/iAEX2.mp4"
+    ];
+
+    // Array of thumbnail URLs for carousel
+    const thumbnailsForModal1 = [
+        "/cocacola-thumbnail.jpg",
+        "/greenLabel2-thumbnail.jpg",
+        "/urbanLadder1-thumbnail.jpg",
+        "/urbanLadder2-thumbnail.jpg",
+        "/greenLabel1-thumbnail.jpg",
+        "/ratcity-thumbnail.jpg",
+        "/urbanLadder3-thumbnail.jpg",
+        "/urbanLadder4-thumbnail.jpg",
+        "/iAEX1-thumbnail.jpg",
+        "/iAEX2-thumbnail.jpg"
     ];
 
     // Array of video URLs for carousel
     const videosForModal2 = [
         "/videos/narayana_1.mp4",
         "/videos/narayana.mp4",
+    ];
+
+    // Array of video URLs for carousel
+    const thumbnailsForModal2 = [
+        "/narayana_1-thumbnail.jpg",
+        "/narayana-thumbnail.jpg",
     ];
 
     // Array of audio data for the third modal
@@ -87,7 +106,7 @@ const WeDo = () => {
                     <Carousel interval={null} controls={false}>
                         {videosForModal1.map((videoSrc, index) => (
                             <Carousel.Item key={index}>
-                                <video controls muted>
+                                <video  controls muted>
                                     <source src={videoSrc} type="video/mp4" />
                                     Your browser does not support the video tag.
                                 </video>

@@ -58,7 +58,7 @@ export default function Home() {
             <h1 className="titles text-center">About Us</h1>
           </FadeIn>
           <FadeIn duration={2} delay={0.5}>
-            <h2>
+            <h2 className='text-center'>
               Artificial Labs stemmed from a hunch - actually more like an
               educated guess that there are far more efficient ways to make and
               produce films. And that’s when a dedicated team of directors,
