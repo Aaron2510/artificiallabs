@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: "https://www.artificiallabs.in",        
     images: [
       {
-        url: "/artificial-labs-logo.png", 
+        url: "https://www.artificiallabs.in/artificial-labs-logo.png", 
         width: 1200,                               
         height: 630                                
       }
