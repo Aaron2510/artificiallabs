@@ -106,7 +106,7 @@ const WeDo = () => {
                     <Carousel interval={null} controls={false}>
                         {videosForModal1.map((videoSrc, index) => (
                             <Carousel.Item key={index}>
-                                <video  controls muted>
+                                <video poster={thumbnailsForModal1[index]} controls muted>
                                     <source src={videoSrc} type="video/mp4" />
                                     Your browser does not support the video tag.
                                 </video>
@@ -133,7 +133,7 @@ const WeDo = () => {
                     <Carousel interval={null} controls={false}>
                         {videosForModal2.map((videoSrc, index) => (
                             <Carousel.Item key={index}>
-                                <video controls muted>
+                                <video poster={thumbnailsForModal2[index]} controls muted>
                                     <source src={videoSrc} type="video/mp4" />
                                     Your browser does not support the video tag.
                                 </video>
