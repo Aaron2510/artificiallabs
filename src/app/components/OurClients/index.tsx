@@ -15,7 +15,8 @@ const OurClients = () => {
     { src: "/N2.png", alt: "Narayana", width: 250, height: 100 },
     { src: "/Cleartrip-logo.png", alt: "Cleartrip", width: 250, height: 100 },
     { src: "/Publicis-logo.png", alt: "Publicis", width: 250, height: 100 },
-    { src: "/Leo Burnett-logo.png", alt: "Leo Burnett", width: 250, height: 100 }
+    { src: "/Leo Burnett-logo.png", alt: "Leo Burnett", width: 250, height: 100 },
+    { src: "/Namma-yatri-logo.png", alt: "Namma yatri", width: 250, height: 100 }
   ];
 
   return (
