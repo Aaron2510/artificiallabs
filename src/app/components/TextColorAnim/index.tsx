@@ -18,9 +18,9 @@ const TextColorAnim = () => {
 
   return (
     <h1 className={styles.waveText} ref={textRef}>
-      <span>MAKE FILMS AS BIG</span>
-      <span>AND WILD AS YOUR</span>
-      <span>IMAGINATION</span>
+      <span>INDIA'S FIRST AI FILM</span>
+      <span>PRODUCTION HOUSE</span>
+      {/* <span>IMAGINATION</span> */}
     </h1>
   );
 };
