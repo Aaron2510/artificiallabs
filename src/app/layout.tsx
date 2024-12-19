@@ -49,6 +49,7 @@ export default function RootLayout({
       <body className={poppins.variable}>
         {children}
         <Footer />
+        <script src="https://player.vimeo.com/api/player.js"></script>
       </body>
     </html>
   );

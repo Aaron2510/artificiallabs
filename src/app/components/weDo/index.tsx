@@ -8,6 +8,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { height } from '@fortawesome/free-brands-svg-icons/fa42Group';
 
+
+const IframeVideoPlayer = (props: { videoSrc: string }) => {
+    return (<div className='iframeVideoWrapper'>
+        <iframe
+            src={props.videoSrc}
+            frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write">
+        </iframe>
+    </div>)
+}
+
 const WeDo = () => {
     const [show, setShow] = useState(false);
     const [modalData, setModalData] = useState(0);
@@ -20,6 +30,7 @@ const WeDo = () => {
 
     // Array of video URLs for carousel
     const videosForModal1 = [
+        "https://player.vimeo.com/video/1040290744?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "/videos/cocacola.mp4",
         "/videos/greenLabel2.mp4",
         "/videos/urbanLadder1.mp4",
@@ -34,6 +45,7 @@ const WeDo = () => {
 
     // Array of thumbnail URLs for carousel
     const thumbnailsForModal1 = [
+        "/santa-thumbnail.jpg",
         "/cocacola-thumbnail.jpg",
         "/greenLabel2-thumbnail.jpg",
         "/urbanLadder1-thumbnail.jpg",
@@ -48,12 +60,14 @@ const WeDo = () => {
 
     // Array of video URLs for carousel
     const videosForModal2 = [
+        "https://player.vimeo.com/video/1040347168?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "/videos/narayana_1.mp4",
         "/videos/narayana.mp4",
     ];
 
     // Array of video URLs for carousel
     const thumbnailsForModal2 = [
+        // "/cleartrip-thumbnail.jpg",
         "/narayana_1-thumbnail.jpg",
         "/narayana-thumbnail.jpg",
     ];
@@ -106,10 +120,13 @@ const WeDo = () => {
                     <Carousel interval={null} controls={false}>
                         {videosForModal1.map((videoSrc, index) => (
                             <Carousel.Item key={index}>
-                                <video poster={thumbnailsForModal1[index]} controls muted>
-                                    <source src={videoSrc} type="video/mp4" />
-                                    Your browser does not support the video tag.
-                                </video>
+                                {!videoSrc.includes('https:') ?
+                                    <video poster={thumbnailsForModal1[index]} controls muted>
+                                        <source src={videoSrc} type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video> :
+                                <IframeVideoPlayer videoSrc={videoSrc} key={index} />
+                                }
                             </Carousel.Item>
                         ))}
                     </Carousel>
@@ -133,10 +150,13 @@ const WeDo = () => {
                     <Carousel interval={null} controls={false}>
                         {videosForModal2.map((videoSrc, index) => (
                             <Carousel.Item key={index}>
+                                {!videoSrc.includes('https:') ?
                                 <video poster={thumbnailsForModal2[index]} controls muted>
                                     <source src={videoSrc} type="video/mp4" />
                                     Your browser does not support the video tag.
-                                </video>
+                                </video> :
+                                <IframeVideoPlayer videoSrc={videoSrc} key={index} />
+}
                             </Carousel.Item>
                         ))}
                     </Carousel>
