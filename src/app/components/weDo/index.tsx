@@ -183,7 +183,7 @@ const WeDo = () => {
                     {audiosForModal3.map((audio, index) => (
                         <div className={styles.audioWrap} key={index}>
                             <h3>{audio.title}</h3>
-                            <audio controls>
+                            <audio controls controlsList="nodownload">
                                 <source src={audio.src} type="audio/mp3" />
                                 Your browser does not support the audio element.
                             </audio>
