@@ -20,7 +20,8 @@ const OurClients = () => {
     { src: "/Leo Burnett-logo.png", alt: "Leo Burnett", width: 250, height: 100 },
     { src: "/Namma-yatri-logo.png", alt: "Namma yatri", width: 250, height: 100 },
     { src: "/Saatchi-logo.png", alt: "Saatchi and Saatchi", width: 250, height: 100 },
-    { src: "/Metadata-logo.png", alt: "MetaData", width: 250, height: 100 }
+    { src: "/Metadata-logo.png", alt: "MetaData", width: 250, height: 100 },
+    { src: "/PocketFM-logo.png", alt: "PocketFM", width: 250, height: 100 }
   ];
 
   return (
