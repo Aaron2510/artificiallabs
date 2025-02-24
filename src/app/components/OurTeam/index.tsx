@@ -112,4 +112,4 @@ const OurTeam = () => {
     )
 }
 
-export default OurTeam
+export default OurTeam;

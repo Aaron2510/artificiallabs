@@ -1,0 +1,28 @@
+.modalContent {
+    background-color: transparent !important;
+    border: none;
+    width: 80%;
+  }
+  
+  .closeButton {
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+  }
+  .closeButton:hover {
+    background-color: transparent;
+  }
+  .modalImage {
+    width: 100%; 
+    height: auto; 
+    border-radius: 25px;
+    // max-width: 500px; 
+    // max-height: 300px; 
+  }
+  .customModalDialog {
+    display: flex;
+    justify-content: center;
+  }
