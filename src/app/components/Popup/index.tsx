@@ -30,7 +30,7 @@ const Popup = () => {
     useEffect(() => {
       const timer = setTimeout(() => {
         setModalShow(true);
-      }, 3000); // 4 seconds delay
+      }, 4000); // 4 seconds delay
 
       return () => clearTimeout(timer); // Cleanup the timer on component unmount
     }, []);

@@ -18,7 +18,7 @@ import Mainframe from './components/Mainframe';
 import OurClients from './components/OurClients';
 // import ScrollToTop from './components/ScrollToTop';
 import TextColorAnim from './components/TextColorAnim';
-
+import Popup from "./components/Popup";
 // GSAPAnimation
 import FadeIn from './components/FadeIn'
 
@@ -26,6 +26,7 @@ export default function Home() {
 
   return (
     <main className={styles.home} id="mainframe">
+      <Popup />
       <Mainframe />
 
       <section className={`${theme.section} ${styles.section1}`} id="section2">

@@ -15,7 +15,7 @@ import { useRouter } from 'next/navigation';
 
 import styles from "./mainframe.module.scss";
 import Header from "../Header";
-import Popup from "../Popup";
+
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -202,12 +202,13 @@ const MinframeAnime = () => {
                         <video className={styles.location} ref={locationCardsRef} muted>
                             <source src="./videos/weblocation1.webm" type="video/webm" />
                         </video>
-                        <Popup />
+                        
                     </>
                 )}
                 <Link href="#section2" ref={arrowDown} className={styles.arrowDown}>
                     <FontAwesomeIcon icon={faArrowDown} className="fa-fw" />
                 </Link>
+
             </Container>
         </div>
     );
