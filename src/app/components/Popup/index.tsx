@@ -13,7 +13,8 @@ const Popup = () => {
         centered
         contentClassName={styles.modalContent}
         dialogClassName={styles.customModalDialog} // Apply the custom class to the modal dialog
-      >
+        onExited={() => document.body.classList.remove('modal-open')}
+        >
         <Modal.Body className={styles.modalBody}>
           <Button variant="secondary" onClick={props.onHide} className={styles.closeButton}>
             X
