@@ -158,7 +158,16 @@ const WeDo = () => {
                     </AppButton>
                 </Modal.Header>
                 <Modal.Body>
-                    <Carousel interval={null} controls={false}>
+                    <Carousel interval={null} prevIcon={
+                        <span className={`${styles['carousel-control-prev-icon']} ${styles['custom-prev-icon']}`}>
+                            <FontAwesomeIcon icon={faChevronLeft} />
+                        </span>
+                    }
+                    nextIcon={
+                        <span className={`${styles['carousel-control-next-icon']} ${styles['custom-next-icon']}`}>
+                            <FontAwesomeIcon icon={faChevronRight} />
+                        </span>
+                        }>
                         {videosForModal2.map((videoSrc, index) => (
                             <Carousel.Item key={index}>
                                 {!videoSrc.includes('https:') ?
