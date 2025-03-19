@@ -175,3 +175,36 @@
         }
     }
 }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    font-size: 1rem; /* Make the icons smaller */
+    width: 30px; /* Adjust width */
+    height: 30px; /* Adjust height */
+    background: none; /* Remove default background */
+    color: #fff; /* Set icon color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Optional: make the buttons circular */
+    border: 3px solid #fff; /* Optional: add a border */
+}
+
+.custom-prev-icon {
+    position: absolute;
+    left: 10px; /* Position closer to the left corner */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.custom-next-icon {
+    position: absolute;
+    right: 10px; /* Position closer to the right corner */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    color: #bc2a8d; /* Change color on hover */
+    border-color: #bc2a8d; /* Change border color on hover */
+}

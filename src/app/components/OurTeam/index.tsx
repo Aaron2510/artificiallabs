@@ -40,7 +40,7 @@ const OurTeam = () => {
                         <Image src="/Carl.png" alt="team" fill />
                         <FigureCaption className={styles.figCaption}>
                             <h2>Carl Savio</h2>
-                            <h3>Executive Director/Co-Founder</h3>
+                            <h3>Executive Director/Founder</h3>
                             <p> <strong>Carl Savio</strong> is a writer, Creative technologist and
                                 film director with over 20 years of experience...</p>
                             <AppButton variant="link" >Read more</AppButton>
@@ -98,7 +98,7 @@ const OurTeam = () => {
                             </>
                         ) : <>
                             <h2>Carl Savio</h2>
-                            <h3>Executive Director/Co-Founder</h3>
+                            <h3>Executive Director/Founder</h3>
                             <p>
                                 <strong>Carl Savio</strong> is an award-winning writer, creative technologist and filmmaker with over 20 years of experience in advertising and filmmaking. His experience spans across categories ranging from fashion, FMCG, fintech, edtech and automotive. He had held senior roles in India’s leading agencies before going on to found Bluebot Digital in 2014 and Bluebot Films in 2019. With his strong and tested understanding of traditional filmmaking techniques, he’s now looking forward to create real-world value and impact with Artificial Labs.
                             </p>

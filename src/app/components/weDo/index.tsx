@@ -7,6 +7,7 @@ import AppButton from '../AppButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { height } from '@fortawesome/free-brands-svg-icons/fa42Group';
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 
 const IframeVideoPlayer = (props: { videoSrc: string }) => {
@@ -117,7 +118,17 @@ const WeDo = () => {
                     </AppButton>
                 </Modal.Header>
                 <Modal.Body>
-                    <Carousel interval={null} controls={false}>
+                    <Carousel interval={null} 
+                    prevIcon={
+                        <span className={`${styles['carousel-control-prev-icon']} ${styles['custom-prev-icon']}`}>
+                            <FontAwesomeIcon icon={FaChevronLeft} />
+                        </span>
+                    }
+                    nextIcon={
+                        <span className={`${styles['carousel-control-next-icon']} ${styles['custom-next-icon']}`}>
+                            <FontAwesomeIcon icon={FaChevronRight} />
+                        </span>
+                        }>
                         {videosForModal1.map((videoSrc, index) => (
                             <Carousel.Item key={index}>
                                 {!videoSrc.includes('https:') ?
