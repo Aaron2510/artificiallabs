@@ -61,6 +61,7 @@ const WeDo = () => {
 
     // Array of video URLs for carousel
     const videosForModal2 = [
+        "https://player.vimeo.com/video/1068069014?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "https://player.vimeo.com/video/1040347168?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "/videos/narayana_1.mp4",
         "/videos/narayana.mp4",
