@@ -4,51 +4,48 @@ import Modal from 'react-bootstrap/Modal';
 import styles from "./popup.module.scss";
 
 const Popup = () => {
-  function MyVerticallyCenteredModal(props: { show: boolean, onHide: () => void }) {
-    return (
-      <Modal
-        show={props.show} onHide={props.onHide} animation={true}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-        contentClassName={styles.modalContent}
-        dialogClassName={styles.customModalDialog} // Apply the custom class to the modal dialog
-        onExited={() => document.body.classList.remove('modal-open')}
-        >
-        <Modal.Body className={styles.modalBody}>
-          <Button variant="secondary" onClick={props.onHide} className={styles.closeButton}>
-            X
-          </Button>
-          <img src="./award-popup.png" alt="award-popup" className={styles.modalImage} />
-        </Modal.Body>
-      </Modal>
-    );
-  }
+  const MyVerticallyCenteredModal = ({ show, onHide }: { show: boolean; onHide: () => void }) => (
+    <Modal
+      show={show}
+      onHide={onHide}
+      animation={true}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+      contentClassName={styles.modalContent}
+      dialogClassName={styles.customModalDialog}
+    >
+      <Modal.Body className={styles.modalBody}>
+        <Button variant="secondary" onClick={onHide} className={styles.closeButton}>
+          X
+        </Button>
+        <img src="./award-popup.png" alt="award-popup" className={styles.modalImage} />
+      </Modal.Body>
+    </Modal>
+  );
 
-  function App() {
+  const App = () => {
     const [modalShow, setModalShow] = useState(false);
 
     useEffect(() => {
-      const timer = setTimeout(() => {
-        setModalShow(true);
-      }, 4000); // 4 seconds delay
-
-      return () => clearTimeout(timer); // Cleanup the timer on component unmount
+      const timer = setTimeout(() => setModalShow(true), 4000);
+      return () => clearTimeout(timer);
     }, []);
 
-    const handleClose = () => setModalShow(false);
+    useEffect(() => {
+      document.body.classList.toggle('modal-open', modalShow);
+      return () => document.body.classList.remove('modal-open');
+    }, [modalShow]);
 
     return (
-      <>
-        <MyVerticallyCenteredModal
-          show={modalShow}
-          onHide={handleClose}
-        />
-      </>
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     );
-  }
+  };
 
   return <App />;
-}
+};
 
 export default Popup;

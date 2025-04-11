@@ -17,7 +17,7 @@
     }
 
     .section4 {
-        padding: 10rem 0;
+        padding: 5rem 0 10rem 0;
 
         h2 {
             font-size: 1.5rem;
@@ -52,11 +52,16 @@
 
     }
 
+    .section6 {
+        padding: 10rem 0 5rem 0;
+    }
+
     .section7 {
         min-height: auto;
 
         h1 {
-            margin-bottom: 2rem;
+            // margin-bottom: 2rem;
+            margin-top: 2rem;
         }
     }
 }

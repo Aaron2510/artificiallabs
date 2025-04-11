@@ -53,6 +53,17 @@ export default function Home() {
         </Container>
       </section>
 
+      <section className={`${theme.section} ${styles.section7}`} id="our-clients">
+        <Container>
+          <FadeIn duration={1.5} fadeInUp={true}>
+            <h1 className="titles text-center">Our Clients</h1>
+          </FadeIn>
+          <FadeIn duration={2} delay={0.5}>
+            <OurClients />
+          </FadeIn>
+        </Container>
+      </section>
+
       <section className={`${theme.section} ${styles.section4}`}>
         <Container >
           <FadeIn duration={1.5} fadeInUp={true}>
@@ -97,16 +108,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className={`${theme.section} ${styles.section7}`} id="our-clients">
-        <Container>
-          <FadeIn duration={1.5} fadeInUp={true}>
-            <h1 className="titles text-center">Our Clients</h1>
-          </FadeIn>
-          <FadeIn duration={2} delay={0.5}>
-            <OurClients />
-          </FadeIn>
-        </Container>
-      </section>
+      
 
       {/* SCROLL TOP */}
       {/* <ScrollToTop /> */}
