@@ -46,7 +46,7 @@ const Footer = () => {
             <div className={styles.footerBottom}>
                 <Container>
                     &copy; <span id="cYear"></span>
-                    <span>Artifical Labs. All rights reserved.</span>
+                    <span>Artificial Labs. All rights reserved.</span>
                 </Container>
             </div>
         </footer>

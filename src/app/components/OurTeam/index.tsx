@@ -76,6 +76,15 @@ const OurTeam = () => {
                         </FigureCaption>
                     </div>
                 </Figure>
+                <Figure>
+                    <div className={styles.figureImage}>
+                        <Image src="/Vidhi.png" alt="team" fill />
+                        <FigureCaption className={styles.figCaption}>
+                            <h2>Vidhi Bansal</h2>
+                            <p>Creative Director</p>
+                        </FigureCaption>
+                    </div>
+                </Figure>
             </div>
 
             {/* MODAL */}
