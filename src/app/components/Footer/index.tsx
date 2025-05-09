@@ -29,7 +29,7 @@ const Footer = () => {
                             <h5>Contact Details</h5>
                             <p>Aaron D'cruz</p>
                             <p>+91-9036100018</p>
-                            <p> <Link href="mailto:contact@artificiallabs.in"> contact@artificiallabs.in </Link></p>
+                            <p> <Link href="mailto:contact@artificiallabs.in"> contact@artificiallabs.n </Link></p>
                         </Col>
                         <Col>
                             <h5 >Connect with us</h5>
