@@ -2,7 +2,7 @@
 
 /* eslint-disable react/no-unescaped-entities */
 import Image from 'next/image'
-import React from "react";
+import React, {useEffect} from "react";
 import { Container } from "react-bootstrap";
 
 // theme
@@ -23,6 +23,17 @@ import Popup from "./components/Popup";
 import FadeIn from './components/FadeIn'
 
 export default function Home() {
+  useEffect(() => {
+    const handleLoad = () => {
+      document.body.style.overflow = 'auto';
+    };
+
+    window.addEventListener("load", handleLoad);
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
 
   return (
     <main className={styles.home} id="mainframe">
