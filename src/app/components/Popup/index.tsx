@@ -32,44 +32,18 @@ const Popup = () => {
       return () => clearTimeout(timer);
     }, []);
 
-    // useEffect(() => {
-    //   document.body.classList.toggle('modal-open', modalShow);
-    //   return () => document.body.classList.remove('modal-open');
-    // }, [modalShow]);
+  //   useEffect(() => {
+  //     document.body.classList.toggle('modal-open', modalShow);
+  //     return () => document.body.classList.remove('modal-open');
+  //   }, [modalShow]);
 
-  //   return (
-  //     <MyVerticallyCenteredModal
-  //       show={modalShow}
-  //       onHide={() => setModalShow(false)}
-  //     />
-  //   );
-  // };
-
-  useEffect(() => {
-    // Add or remove the `modal-open` class based on `modalShow`
-    if (modalShow) {
-      document.body.classList.add('modal-open');
-    } else {
-      document.body.classList.remove('modal-open');
-    }
-
-    // Cleanup on unmount
-    return () => {
-      document.body.classList.remove('modal-open');
-    };
-  }, [modalShow]);
-
-  const handleClose = () => {
-    setModalShow(false);
+    return (
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
+    );
   };
-
-  return (
-    <MyVerticallyCenteredModal
-      show={modalShow}
-      onHide={handleClose}
-    />
-  );
-};
 
 
   return <App />;
