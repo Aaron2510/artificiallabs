@@ -1,31 +1,31 @@
-.clientImages {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+.clientSlider {
+    margin: 20px auto;
+    width: 90%;
+}
 
+.imageContainer {
+    padding: 10px;
+    text-align: center;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+// Adjustments for mobile view
+@media (max-width: 768px) {
     .imageContainer {
-        flex-basis: 20%;
-        padding: 1rem;
-        text-align: center;
-        border-radius: 25px;
-        margin: 2%;
-        background-color: #301935;
-        box-shadow: 5px 5px 10px #48304D;
+        padding: 5px;
+    }
+}
 
-        img {
-            max-width: 200px;
-            margin: 0 auto;
-            height: auto;
+@media (max-width: 480px) {
+    .imageContainer {
+        padding: 2px;
+    }
 
-            @media (max-width: 767.98px) {
-                max-width: 75px;
-            }
-        }
-
-        @media (max-width: 767.98px) {
-            width: 50%;
-            margin: 3% 2%;
-        }
+    .clientSlider {
+        padding: 0px 15px;
     }
 }

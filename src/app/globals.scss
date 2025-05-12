@@ -313,3 +313,7 @@ video {
     height: 100%;
   }
 }
+
+body.force-overflow {
+  overflow: auto !important;
+}

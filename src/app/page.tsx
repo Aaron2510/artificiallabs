@@ -2,7 +2,7 @@
 
 /* eslint-disable react/no-unescaped-entities */
 import Image from 'next/image'
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { Container } from "react-bootstrap";
 
 // theme
@@ -24,14 +24,10 @@ import FadeIn from './components/FadeIn'
 
 export default function Home() {
   useEffect(() => {
-    const handleLoad = () => {
-      document.body.style.overflow = 'auto';
-    };
-
-    window.addEventListener("load", handleLoad);
+    document.body.classList.add('force-overflow');
 
     return () => {
-      window.removeEventListener("load", handleLoad);
+      document.body.classList.remove('force-overflow');
     };
   }, []);
 
@@ -119,7 +115,7 @@ export default function Home() {
         </Container>
       </section>
 
-      
+
 
       {/* SCROLL TOP */}
       {/* <ScrollToTop /> */}
