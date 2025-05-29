@@ -200,7 +200,7 @@ const MinframeAnime = () => {
                         </video>
 
                         <video className={styles.location} ref={locationCardsRef} muted>
-                            <source src="./videos/weblocation1.webm" type="video/webm" />
+                            <source src="./videos/weblocation.webm" type="video/webm" />
                         </video>
                         
                     </>

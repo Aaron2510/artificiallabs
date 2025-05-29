@@ -25,7 +25,10 @@ const OurClients = () => {
     { src: "/Campa-logo.png", alt: "Campa", width: 250, height: 100 },
     { src: "/Ariel-logo.png", alt: "Ariel", width: 250, height: 100 },
     { src: "/BPL-logo.png", alt: "BPL", width: 250, height: 100 },
-    { src: "/Joy-logo.png", alt: "Joy", width: 250, height: 100 }
+    { src: "/Joy-logo.png", alt: "Joy", width: 250, height: 100 },
+    { src: "/Fairy-logo.png", alt: "Fairy", width: 250, height: 100 },
+    { src: "/Kelvinator-logo.png", alt: "Kelvinator", width: 250, height: 100 },
+    { src: "/OralB-logo.png", alt: "OralB", width: 250, height: 100 }
   ];
 
   return (

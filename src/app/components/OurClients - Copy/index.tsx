@@ -8,27 +8,27 @@ import styles from "./client.module.scss";
 
 const OurClients = () => {
   const clientImages = [
-    { src: "/P&G.png", alt: "P&G", width: 250, height: 100 },
-    { src: "/H&S-logo-4k.png", alt: "Head and Shoulders", width: 250, height: 100 },
-    { src: "/Tide_print.png", alt: "Tide", width: 250, height: 100 },
-    { src: "/Pantene-Logo.png", alt: "Pantene", width: 250, height: 100 },
-    { src: "/Always-logo.png", alt: "Always", width: 250, height: 100 },
-    { src: "/Rejoice-logo.png", alt: "Rejoice", width: 250, height: 100 },
-    { src: "/INBREW.png", alt: "Inbrew", width: 250, height: 100 },
-    { src: "/UL.png", alt: "Urban Ladder", width: 250, height: 100 },
-    { src: "/DD.png", alt: "Dairy Day", width: 250, height: 100 },
-    { src: "/N2.png", alt: "Narayana", width: 250, height: 100 },
-    { src: "/Cleartrip-logo.png", alt: "Cleartrip", width: 250, height: 100 },
-    { src: "/Publicis-logo.png", alt: "Publicis", width: 250, height: 100 },
-    { src: "/Leo Burnett-logo.png", alt: "Leo Burnett", width: 250, height: 100 },
-    { src: "/Namma-yatri-logo.png", alt: "Namma yatri", width: 250, height: 100 },
-    { src: "/Saatchi-logo.png", alt: "Saatchi and Saatchi", width: 250, height: 100 },
-    { src: "/Metadata-logo.png", alt: "MetaData", width: 250, height: 100 },
-    { src: "/PocketFM-logo.png", alt: "PocketFM", width: 250, height: 100 },
-    { src: "/Campa-logo.png", alt: "Campa", width: 250, height: 100 },
-    { src: "/Ariel-logo.png", alt: "Ariel", width: 250, height: 100 },
-    { src: "/BPL-logo.png", alt: "BPL", width: 250, height: 100 },
-    { src: "/Joy-logo.png", alt: "Joy", width: 250, height: 100 }
+    { src: "/Publicis-logo_1.png", alt: "Publicis", width: 150, height: 100 },
+    { src: "/P&G_1.png", alt: "P&G", width: 150, height: 100 },
+    { src: "/H&S-logo-4k.png", alt: "Head and Shoulders", width: 150, height: 100 },
+    { src: "/Pantene-Logo_1.png", alt: "Pantene", width: 150, height: 100 },
+    { src: "/Rejoice-logo_1.png", alt: "Rejoice", width: 150, height: 100 },
+    { src: "/Joy-logo_1.png", alt: "Joy", width: 100, height: 100 },
+    { src: "/Tide_print_1.png", alt: "Tide", width: 100, height: 100 },
+    { src: "/Ariel-logo_1.png", alt: "Ariel", width: 100, height: 100 },
+    { src: "/Always-logo.png", alt: "Always", width: 150, height: 100 },
+    { src: "/Leo_Burnett-logo_1.png", alt: "Leo Burnett", width: 150, height: 100 },
+    { src: "/Saatchi-logo_1.png", alt: "Saatchi and Saatchi", width: 150, height: 100 },
+    { src: "/Cleartrip-logo_1.png", alt: "Cleartrip", width: 150, height: 100 },
+    { src: "/Campa-logo_1.png", alt: "Campa", width: 150, height: 100 },
+    { src: "/UL_1.png", alt: "Urban Ladder", width: 150, height: 100 },
+    { src: "/DD_1.png", alt: "Dairy Day", width: 100, height: 100 },
+    { src: "/PocketFM-logo_1.png", alt: "PocketFM", width: 100, height: 100 },
+    { src: "/BPL-logo_1.png", alt: "BPL", width: 100, height: 100 },
+    { src: "/Metadata-logo_1.png", alt: "MetaData", width: 150, height: 100 },
+    { src: "/N2_1.png", alt: "Narayana", width: 150, height: 100 },
+    { src: "/Namma-yatri-logo_1.png", alt: "Namma yatri", width: 150, height: 100 },
+    { src: "/INBREW_1.png", alt: "Inbrew", width: 150, height: 100 }
   ];
 
   const settings = {
@@ -41,6 +41,7 @@ const OurClients = () => {
     autoplaySpeed: 0,
     pauseOnHover: true,
     cssEase: "linear",
+    arrows: false,
     responsive: [
       {
         breakpoint: 768, // For screens smaller than 768px
@@ -64,7 +65,7 @@ const OurClients = () => {
       <Slider {...settings}>
         {clientImages.map((client, index) => (
           <div className={styles.imageContainer} key={index}>
-            <Image
+            <Image 
               src={client.src}
               alt={client.alt}
               width={client.width}

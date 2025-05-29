@@ -18,7 +18,8 @@ import Mainframe from './components/Mainframe';
 import OurClients from './components/OurClients';
 // import ScrollToTop from './components/ScrollToTop';
 import TextColorAnim from './components/TextColorAnim';
-import Popup from "./components/Popup";
+// import Popup from "./components/Popup";
+import Awards from './components/Awards';
 // GSAPAnimation
 import FadeIn from './components/FadeIn'
 
@@ -33,7 +34,7 @@ export default function Home() {
 
   return (
     <main className={styles.home} id="mainframe">
-      <Popup />
+      {/* <Popup /> */}
       <Mainframe />
 
       <section className={`${theme.section} ${styles.section1}`} id="section2">
@@ -48,6 +49,17 @@ export default function Home() {
         <Container>
           <FadeIn duration={1.5} fadeInUp={true}>
             <TextColorAnim />
+          </FadeIn>
+        </Container>
+      </section>
+
+      <section className={`${theme.section} ${styles.section8}`}>
+        <Container>
+          <FadeIn duration={1.5} fadeInUp={true}>
+            <h1 className="titles text-center">Awards</h1>
+          </FadeIn>
+          <FadeIn duration={2} delay={0.5}>
+            <Awards />
           </FadeIn>
         </Container>
       </section>
