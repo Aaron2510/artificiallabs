@@ -19,7 +19,7 @@ const Popup = () => {
         <Button variant="secondary" onClick={onHide} className={styles.closeButton}>
           X
         </Button>
-        <img src="./award-popup.png" alt="award-popup" className={styles.modalImage} />
+        <img src="./Mukdeee.jpg" alt="award-popup" className={styles.modalImage} />
       </Modal.Body>
     </Modal>
   );
