@@ -20,6 +20,7 @@ import OurClients from './components/OurClients';
 import TextColorAnim from './components/TextColorAnim';
 // import Popup from "./components/Popup";
 import Awards from './components/Awards';
+import LastTagLine from './components/LastTagLine';
 // GSAPAnimation
 import FadeIn from './components/FadeIn'
 
@@ -123,6 +124,14 @@ export default function Home() {
           </FadeIn>
           <FadeIn duration={2}>
             <OurTeam />
+          </FadeIn>
+        </Container>
+      </section>
+
+      <section className={`${theme.section} ${styles.section9}`}>
+        <Container>
+          <FadeIn duration={1.5} fadeInUp={true}>
+            <LastTagLine />
           </FadeIn>
         </Container>
       </section>

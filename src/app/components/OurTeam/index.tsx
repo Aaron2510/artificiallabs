@@ -35,7 +35,7 @@ const OurTeam = () => {
                         </FigureCaption>
                     </div>
                 </Figure> */}
-                <Figure onClick={() => handleShow('carl')}>
+                {/* <Figure onClick={() => handleShow('carl')}>
                     <div className={styles.figureImage}>
                         <Image src="/Carl.png" alt="team" fill />
                         <FigureCaption className={styles.figCaption}>
@@ -46,9 +46,18 @@ const OurTeam = () => {
                             <AppButton variant="link" >Read more</AppButton>
                         </FigureCaption>
                     </div>
-                </Figure>
+                </Figure> */}
             </div>
             <div className={`${styles.teamRowOne} ${styles.teamRowTwo}`}>
+                <Figure>
+                    <div className={styles.figureImage}>
+                        <Image src="/Carl.png" alt="team" fill />
+                        <FigureCaption className={styles.figCaption}>
+                            <h2>Carl Savio</h2>
+                            <p>Executive Director/Founder</p>
+                        </FigureCaption>
+                    </div>
+                </Figure>
                 <Figure>
                     <div className={styles.figureImage}>
                         <Image src="/Gagan.png" alt="team" fill />

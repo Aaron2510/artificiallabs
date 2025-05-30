@@ -31,8 +31,7 @@ const WeDo = () => {
 
     // Array of video URLs for carousel
     const videosForModal1 = [
-        "https://player.vimeo.com/video/1040290744?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "/videos/cocacola.mp4",
+        // "/videos/cocacola.mp4",
         "/videos/greenLabel2.mp4",
         "/videos/urbanLadder1.mp4",
         "/videos/urbanLadder2.mp4",
@@ -46,8 +45,7 @@ const WeDo = () => {
 
     // Array of thumbnail URLs for carousel
     const thumbnailsForModal1 = [
-        "/santa-thumbnail.jpg",
-        "/cocacola-thumbnail.jpg",
+        // "/cocacola-thumbnail.jpg",
         "/greenLabel2-thumbnail.jpg",
         "/urbanLadder1-thumbnail.jpg",
         "/urbanLadder2-thumbnail.jpg",
@@ -61,6 +59,7 @@ const WeDo = () => {
 
     // Array of video URLs for carousel
     const videosForModal2 = [
+        "https://player.vimeo.com/video/1040290744?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "https://player.vimeo.com/video/1068069014?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "https://player.vimeo.com/video/1040347168?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "/videos/narayana_1.mp4",
@@ -69,6 +68,7 @@ const WeDo = () => {
 
     // Array of video URLs for carousel
     const thumbnailsForModal2 = [
+        "/santa-thumbnail.jpg",
         // "/cleartrip-thumbnail.jpg",
         "/narayana_1-thumbnail.jpg",
         "/narayana-thumbnail.jpg",

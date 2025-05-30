@@ -15,7 +15,7 @@ const Awards = () => {
     <div className={styles.awards}>
       {awardsList.map((award, index) => (
         <div className={styles.imageContainer} key={index}>
-          <Image key={index} src={award.src} alt={award.alt} layout="responsive" width={250} height={250} />
+          <Image key={index} src={award.src} alt={award.alt} layout="responsive" width={275} height={275} />
         </div>
       ))}
     </div>
