@@ -199,7 +199,7 @@ const MinframeAnime = () => {
                             <source src="./videos/petra-logo.webm" />
                         </video>
 
-                        <video className={styles.location} ref={locationCardsRef} muted>
+                        <video className={styles.location} ref={locationCardsRef} muted loop autoPlay>
                             <source src="./videos/weblocation.webm" type="video/webm" />
                         </video>
                         
