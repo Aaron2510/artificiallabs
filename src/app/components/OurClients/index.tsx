@@ -28,7 +28,8 @@ const OurClients = () => {
     { src: "/Joy-logo.png", alt: "Joy", width: 250, height: 100 },
     { src: "/Fairy-logo.png", alt: "Fairy", width: 250, height: 100 },
     { src: "/Kelvinator-logo.png", alt: "Kelvinator", width: 250, height: 100 },
-    { src: "/OralB-logo.png", alt: "OralB", width: 250, height: 100 }
+    { src: "/OralB-logo.png", alt: "OralB", width: 250, height: 100 },
+    { src: "/Prodigious-logo.png", alt: "Prodigious", width: 250, height: 100 }
   ];
 
   return (
