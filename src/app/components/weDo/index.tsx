@@ -40,7 +40,8 @@ const WeDo = () => {
         "/videos/urbanLadder3.mp4",
         "/videos/urbanLadder4.mp4",
         "/videos/iAEX1.mp4",
-        "/videos/iAEX2.mp4"
+        "/videos/iAEX2.mp4",
+        "https://player.vimeo.com/video/1040347168?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
     ];
 
     // Array of thumbnail URLs for carousel
@@ -61,7 +62,6 @@ const WeDo = () => {
     const videosForModal2 = [
         "https://player.vimeo.com/video/1040290744?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "https://player.vimeo.com/video/1068069014?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
-        "https://player.vimeo.com/video/1040347168?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "/videos/narayana_1.mp4",
         "/videos/narayana.mp4",
     ];
@@ -110,9 +110,9 @@ const WeDo = () => {
                 <Modal.Header className={styles.modalTitle}>
                     <Modal.Title >
                         Brand Videos
-                        <AppButton className={`${styles.hrefBtn} btn btn-primary`} onClick={() => handleMailTo('aaron@bluebot.in')}>
+                        {/* <AppButton className={`${styles.hrefBtn} btn btn-primary`} onClick={() => handleMailTo('aaron@bluebot.in')}>
                             Request Video
-                        </AppButton>
+                        </AppButton> */}
                     </Modal.Title>
                     <AppButton variant="transparent" className={styles.btnClose} onClick={handleClose} >
                         <FontAwesomeIcon icon={faClose} className="fa-fw" />
@@ -150,9 +150,9 @@ const WeDo = () => {
                 <Modal.Header className={styles.modalTitle}>
                     <Modal.Title>
                         Social media content
-                        <AppButton className={`${styles.hrefBtn} btn btn-primary`} onClick={() => handleMailTo('aaron@bluebot.in')}>
+                        {/* <AppButton className={`${styles.hrefBtn} btn btn-primary`} onClick={() => handleMailTo('aaron@bluebot.in')}>
                             Request Video
-                        </AppButton>
+                        </AppButton> */}
                     </Modal.Title>
                     <AppButton variant="transparent" className={styles.btnClose} onClick={handleClose} >
                         <FontAwesomeIcon icon={faClose} className="fa-fw" />
