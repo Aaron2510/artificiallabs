@@ -29,7 +29,11 @@ const OurClients = () => {
     { src: "/Fairy-logo.png", alt: "Fairy", width: 250, height: 100 },
     { src: "/Kelvinator-logo.png", alt: "Kelvinator", width: 250, height: 100 },
     { src: "/OralB-logo.png", alt: "OralB", width: 250, height: 100 },
-    { src: "/Prodigious-logo.png", alt: "Prodigious", width: 250, height: 100 }
+    { src: "/Prodigious-logo.png", alt: "Prodigious", width: 250, height: 100 },
+    { src: "/Smoodh-logo.png", alt: "Smoodh", width: 250, height: 100 },
+    { src: "/Crest-logo.png", alt: "Crest", width: 250, height: 100 },
+    { src: "/Fizz-logo.png", alt: "Fizz", width: 250, height: 100 },
+    { src: "/Frooti-logo.png", alt: "Frooti", width: 250, height: 100 }
   ];
 
   return (

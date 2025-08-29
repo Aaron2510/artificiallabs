@@ -121,7 +121,7 @@ export default function Home() {
       <section className={`${theme.section} ${styles.section6}`} id="meet-our-team">
         <Container>
           <FadeIn duration={1.5} fadeInUp={true}>
-            <h1 className="titles text-center">Meet Our Team</h1>
+            <h1 className="titles text-center">Meet Our Leaders</h1>
           </FadeIn>
           <FadeIn duration={2}>
             <OurTeam />
