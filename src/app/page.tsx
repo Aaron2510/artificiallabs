@@ -22,6 +22,7 @@ import TextColorAnim from './components/TextColorAnim';
 // import Popup from "./components/Popup";
 import Awards from './components/Awards';
 import LastTagLine from './components/LastTagLine';
+import InTheNews from './components/InTheNews';
 // GSAPAnimation
 import FadeIn from './components/FadeIn'
 
@@ -128,6 +129,17 @@ export default function Home() {
           </FadeIn>
         </Container>
       </section>
+
+      {/* <section className={`${theme.section} ${styles.section10}`} id="in-the-news">
+        <Container>
+          <FadeIn duration={1.5} fadeInUp={true}>
+            <h1 className="titles text-center">In the News</h1>
+          </FadeIn>
+          <FadeIn duration={2}>
+            <InTheNews />
+          </FadeIn>
+        </Container>
+      </section> */}
 
       <section className={`${theme.section} ${styles.section9}`}>
         <Container>

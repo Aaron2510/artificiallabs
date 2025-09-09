@@ -1,19 +1,17 @@
 .awards {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 100px;
     padding: 20px;
-    // background-color: #301935;
-    // box-shadow: 5px 5px 10px #48304D;
-    // border-radius: 20px;
 }
 
 .imageContainer {
     position: relative;
     //   overflow: hidden;
-    width: 275px;
+    width: calc(33.333% - 14px);
+    max-width: 275px;
     height: 275px;
     transition: transform 0.3s ease;
 
@@ -31,6 +29,10 @@
 }
 
 @media (max-width: 768px) {
+    .awards {
+    gap: 20px;
+    padding-bottom: 0px;
+    }
     .imageContainer {
         width: calc(50% - 10px);
         height: auto;

@@ -1,0 +1,32 @@
+.newsImages {
+  display: flex;
+  justify-content: space-around;
+  object-fit: contain;
+}
+
+.imageContainer {
+  background-color: #301935;
+  box-shadow: 5px 5px 10px #48304D;
+  border-radius: 25px;
+  padding: 1rem 2rem;
+
+  img {
+    width: auto;
+    height: auto;
+    transition: transform 0.6s ease;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 25px;
+    margin: 2%;
+  }
+
+  &:hover img {
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 450px) {
+  .imageContainer {
+    padding: 0rem;
+  }
+}
