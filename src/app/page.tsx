@@ -130,7 +130,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* <section className={`${theme.section} ${styles.section10}`} id="in-the-news">
+      <section className={`${theme.section} ${styles.section10}`} id="in-the-news">
         <Container>
           <FadeIn duration={1.5} fadeInUp={true}>
             <h1 className="titles text-center">In the News</h1>
@@ -139,7 +139,7 @@ export default function Home() {
             <InTheNews />
           </FadeIn>
         </Container>
-      </section> */}
+      </section>
 
       <section className={`${theme.section} ${styles.section9}`}>
         <Container>

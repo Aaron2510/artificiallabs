@@ -6,7 +6,8 @@ import styles from './news.module.scss';
 interface NewsItem {
   imageUrl: string;
   alt: string;
-  bottomText: string;
+  bottomImage: string;
+  bottomAlt: string;
   bottomLink: string;
 }
 
@@ -14,18 +15,20 @@ const newsItems: NewsItem[] = [
   {
     imageUrl: '/Afaqs-logo.png',
     alt: 'News 1',
-    bottomText: 'The author challenges the fear around Generative AI, suggesting it’s not a threat but a tool that democratises creativity like never before.',
+    bottomImage: '/News1.png',
+    bottomAlt: 'news1',
     bottomLink: 'https://www.afaqs.com/agency-briefs/creativity-has-survived-every-tech-shift-and-genai-is-simply-the-next-evolution-9457132',
   },
   {
     imageUrl: '/Campaign-logo.png',
     alt: 'News 2',
-    bottomText: 'Carl Savio, founder and CEO of Bengaluru’s Artificial Labs feels that AI is an accelerator for ideas but that it cannot, will not in the foreseeable future.',
+    bottomImage: '/News2.png',
+    bottomAlt: 'news2',
     bottomLink: 'https://www.campaignindia.in/article/ai-storm-will-agencies-sink-or-soar/504387',
   },
 ];
 
-const InTheNewsCopy: React.FC = () => (
+const InTheNews: React.FC = () => (
   <section>
     <div className={styles.newsImages}>
       {newsItems.map((item, index) => (
@@ -39,10 +42,15 @@ const InTheNewsCopy: React.FC = () => (
             />
         </div>
         <div className={styles.newsBottom}>
-            <p className={styles.newstext}>{item.bottomText}</p>
+            <Image className={styles.newsImage}
+              src={item.bottomImage}
+              alt={item.bottomAlt}
+              width={500}
+              height={150}
+            />
             <div>
               <Link href={item.bottomLink} target="_blank" rel="noopener noreferrer">
-                <span className={styles.readMore}>Read More...</span>
+                <span className={styles.readMore}>Read More</span>
               </Link>
             </div>
           </div>
@@ -52,4 +60,4 @@ const InTheNewsCopy: React.FC = () => (
   </section>
 );
 
-export default InTheNewsCopy;
+export default InTheNews;
