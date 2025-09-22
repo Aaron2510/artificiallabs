@@ -23,9 +23,15 @@ const newsItems: NewsItem[] = [
     bottomText: 'Carl Savio, founder and CEO of Bengaluru’s Artificial Labs feels that AI is an accelerator for ideas but that it cannot, will not in the foreseeable future.',
     bottomLink: 'https://www.campaignindia.in/article/ai-storm-will-agencies-sink-or-soar/504387',
   },
+  {
+    imageUrl: '/Curious-logo.png',
+    alt: 'News 3',
+    bottomText: 'In Carl Savio’s AI short film, Rat City isn’t just another rodent block-it’s a full-blown gangster paradise. With a slick execution and a surprising twist.',
+    bottomLink: 'https://curiousrefuge.com/ai-film-gallery/rat-city',
+  },
 ];
 
-const InTheNewsCopy: React.FC = () => (
+const InTheNews: React.FC = () => (
   <section>
     <div className={styles.newsImages}>
       {newsItems.map((item, index) => (
@@ -52,4 +58,4 @@ const InTheNewsCopy: React.FC = () => (
   </section>
 );
 
-export default InTheNewsCopy;
+export default InTheNews;

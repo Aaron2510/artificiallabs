@@ -28,7 +28,7 @@ const newsItems: NewsItem[] = [
   },
 ];
 
-const InTheNews: React.FC = () => (
+const InTheNewsCopy: React.FC = () => (
   <section>
     <div className={styles.newsImages}>
       {newsItems.map((item, index) => (
@@ -60,4 +60,4 @@ const InTheNews: React.FC = () => (
   </section>
 );
 
-export default InTheNews;
+export default InTheNewsCopy;
