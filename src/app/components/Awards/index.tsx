@@ -24,25 +24,13 @@ const Awards = () => {
 //   );
 // };
 
-  const firstRow = awardsList.slice(0, 3);
-  const secondRow = awardsList.slice(3);
-
   return (
-    <div>
-      <div className={styles.awards}>
-        {firstRow.map((award, index) => (
-          <div className={styles.imageContainer} key={index}>
-            <Image src={award.src} alt={award.alt} layout="responsive" width={275} height={275} />
-          </div>
-        ))}
-      </div>
-      <div className={styles.awards}>
-        {secondRow.map((award, index) => (
-          <div className={styles.imageContainer} key={index}>
-            <Image src={award.src} alt={award.alt} layout="responsive" width={275} height={275} />
-          </div>
-        ))}
-      </div>
+    <div className={styles.awards}>
+      {awardsList.map((award, index) => (
+        <div className={styles.imageContainer} key={index}>
+          <Image src={award.src} alt={award.alt} layout="responsive" width={275} height={275} />
+        </div>
+      ))}
     </div>
   );
 };
