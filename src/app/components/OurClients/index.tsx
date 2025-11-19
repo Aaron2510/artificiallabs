@@ -8,7 +8,7 @@ const OurClients = () => {
     { src: "/Publicis-logo.png", alt: "Publicis", width: 250, height: 100 },
     { src: "/H&S-logo-4k.png", alt: "Head and Shoulders", width: 250, height: 100 },
     { src: "/Pantene-Logo.png", alt: "Pantene", width: 250, height: 100 },
-    { src: "/Reliance-Logo.png", alt: "Reliance", width: 250, height: 100 },
+    { src: "/Reliance-logo.png", alt: "Reliance", width: 250, height: 100 },
     { src: "/Cleartrip-logo.png", alt: "Cleartrip", width: 250, height: 100 },
     { src: "/Tide_print.png", alt: "Tide", width: 250, height: 100 },
     { src: "/OralB-logo.png", alt: "OralB", width: 250, height: 100 },
