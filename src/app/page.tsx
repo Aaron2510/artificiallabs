@@ -119,6 +119,23 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* <section className={`${theme.section} ${styles.section11}`}>
+        <Container >
+          <FadeIn duration={1.5} fadeInUp={true}>
+            <h1 className="titles text-center">A-Team</h1>
+          </FadeIn>
+          <FadeIn duration={2} delay={0.5}>
+            <h2 className='text-center'>
+              Filmmaking, simplified.<br />
+              Powered by Agentic AI<br /><br />
+              Our proprietary Agentic-AI tool that makes filmmaking effortless for brands, turning complex creative and production decisions into simple, guided moves.
+<br /><br />
+              Coming Soon
+            </h2>
+          </FadeIn>
+        </Container>
+      </section> */}
+
       <section className={`${theme.section} ${styles.section6}`} id="meet-our-team">
         <Container>
           <FadeIn duration={1.5} fadeInUp={true}>
