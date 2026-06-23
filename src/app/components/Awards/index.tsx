@@ -5,6 +5,7 @@ import styles from "./award.module.scss";
 
 const Awards = () => {
   const awardsList = [
+    { src: "/Two.jpg", alt: "Two-kyoorius" },
     { src: "/Mukdeee1.jpg", alt: "mukdeee" },
     { src: "/Foxglove.png", alt: "foxglove" },
     { src: "/Maddy.png", alt: "maddy" },
