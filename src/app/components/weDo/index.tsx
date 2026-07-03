@@ -32,6 +32,9 @@ const WeDo = () => {
     // Array of video URLs for carousel
     const videosForModal1 = [
         // "/videos/cocacola.mp4",
+        "/videos/BPL - Trimmer.mp4",
+        "/videos/Green Label.mp4",
+        "/videos/Kelvinator - Summer.mp4",
         "/videos/greenLabel2.mp4",
         "/videos/urbanLadder1.mp4",
         "/videos/urbanLadder2.mp4",
@@ -46,32 +49,39 @@ const WeDo = () => {
 
     // Array of thumbnail URLs for carousel
     const thumbnailsForModal1 = [
-        // "/cocacola-thumbnail.jpg",
-        "/greenLabel2-thumbnail.jpg",
-        "/urbanLadder1-thumbnail.jpg",
-        "/urbanLadder2-thumbnail.jpg",
-        "/greenLabel1-thumbnail.jpg",
-        "/ratcity-thumbnail.jpg",
-        "/urbanLadder3-thumbnail.jpg",
-        "/urbanLadder4-thumbnail.jpg",
-        "/iAEX1-thumbnail.jpg",
-        "/iAEX2-thumbnail.jpg"
+        // "/works/cocacola-thumbnail.jpg",
+        "/works/BPL - Trimmer.jpg",
+        "/works/Green Label.jpg",
+        "/works/Kelvinator - Summer.jpg",
+        "/works/greenLabel2-thumbnail.jpg",
+        "/works/urbanLadder1-thumbnail.jpg",
+        "/works/urbanLadder2-thumbnail.jpg",
+        "/works/greenLabel1-thumbnail.jpg",
+        "/works/ratcity-thumbnail.jpg",
+        "/works/urbanLadder3-thumbnail.jpg",
+        "/works/urbanLadder4-thumbnail.jpg",
+        "/works/iAEX1-thumbnail.jpg",
+        "/works/iAEX2-thumbnail.jpg"
     ];
 
     // Array of video URLs for carousel
-    const videosForModal2 = [
+    const videosForModal2 = [    
+        "/videos/Tide - Expert clean.mp4",
+        "videos/Tide - Franco.mp4",
         "https://player.vimeo.com/video/1040290744?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "https://player.vimeo.com/video/1068069014?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "/videos/narayana_1.mp4",
-        "/videos/narayana.mp4",
+        "/videos/narayana.mp4"
     ];
 
     // Array of video URLs for carousel
     const thumbnailsForModal2 = [
-        "/santa-thumbnail.jpg",
-        // "/cleartrip-thumbnail.jpg",
-        "/narayana_1-thumbnail.jpg",
-        "/narayana-thumbnail.jpg",
+        "/works/Tide - Expert clean.jpg",
+        "/works/Tide - Franco.jpg",
+        "/works/santa-thumbnail.jpg",
+        // "/works/cleartrip-thumbnail.jpg",
+        "/works/narayana_1-thumbnail.jpg",
+        "/works/narayana-thumbnail.jpg",
     ];
 
     // Array of audio data for the third modal
@@ -85,11 +95,33 @@ const WeDo = () => {
 
     // Array of images URLs for fourth model
     const visualsForModal4 = [
-        { src: "/visual_pantene_1.jpg", alt: "Pantene1", width: 400, height: 300 },
-        { src: "/visual_pantene_2.jpg", alt: "Pantene2", width: 400, height: 300 },
-        { src: "/visual_pantene_3.jpg", alt: "Pantene3", width: 400, height: 300 },
-        { src: "/visual_pantene_4.jpg", alt: "Pantene4", width: 400, height: 300 }
+        { src: "/works/visual_pantene_1.jpg", alt: "Pantene1", width: 400, height: 300 },
+        { src: "/works/visual_pantene_2.jpg", alt: "Pantene2", width: 400, height: 300 },
+        { src: "/works/visual_pantene_3.jpg", alt: "Pantene3", width: 400, height: 300 },
+        { src: "/works/visual_pantene_4.jpg", alt: "Pantene4", width: 400, height: 300 }
     ];
+
+    // Array of thumbnail URLs for carousel
+    // const thumbnailsForModal5 = [
+    //     "/works/Appy Fizz.jpg",
+    //     "/works/Downy - Horizontal.jpg",
+    //     // "/works/Downy - Vertical.jpg",
+    //     "/works/Red Eye.jpg",
+    //     "/works/Campa Ajith - Horizontal.jpg",
+    //     // "/works/Campa Ajith - Vertical.jpg"
+    // ];
+
+    // Array of video URLs for carousel
+    // const videosForModal5 = [
+    //     // "https://player.vimeo.com/video/1040290744?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+    //     // "https://player.vimeo.com/video/1068069014?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+    //     "/videos/Appy Fizz.mp4",
+    //     "/videos/Downy - Horizontal.mp4",
+    //     // "/videos/Downy - Vertical.mp4",
+    //     "/videos/Red Eye.mp4",
+    //     "/videos/Campa Ajith - Horizontal.mp4",
+    //     // "/videos/Campa Ajith - Vertical.mp4"
+    // ];
 
     const handleMailTo = (email: string) => {
         // Set the mailto link dynamically
@@ -99,6 +131,7 @@ const WeDo = () => {
     return (
         <>
             <div className={styles.imageGrid}>
+                {/* <Figure className={styles.gridFive} onClick={() => handleShow(5)} /> */}
                 <Figure className={styles.gridOne} onClick={() => handleShow(1)} />
                 <Figure className={styles.gridTwo} onClick={() => handleShow(2)} />
                 <Figure className={styles.gridThree} onClick={() => handleShow(3)} />
@@ -110,25 +143,25 @@ const WeDo = () => {
                 <Modal.Header className={styles.modalTitle}>
                     <Modal.Title >
                         Brand Videos
-                        {/* <AppButton className={`${styles.hrefBtn} btn btn-primary`} onClick={() => handleMailTo('aaron@bluebot.in')}>
+                        <AppButton className={`${styles.hrefBtn} btn btn-primary`} onClick={() => handleMailTo('aaron@bluebot.in')}>
                             Request Video
-                        </AppButton> */}
+                        </AppButton>
                     </Modal.Title>
                     <AppButton variant="transparent" className={styles.btnClose} onClick={handleClose} >
                         <FontAwesomeIcon icon={faClose} className="fa-fw" />
                     </AppButton>
                 </Modal.Header>
                 <Modal.Body>
-                    <Carousel interval={null} 
-                    prevIcon={
-                        <span className={`${styles['carousel-control-prev-icon']} ${styles['custom-prev-icon']}`}>
-                            <FontAwesomeIcon icon={faChevronLeft} />
-                        </span>
-                    }
-                    nextIcon={
-                        <span className={`${styles['carousel-control-next-icon']} ${styles['custom-next-icon']}`}>
-                            <FontAwesomeIcon icon={faChevronRight} />
-                        </span>
+                    <Carousel interval={null}
+                        prevIcon={
+                            <span className={`${styles['carousel-control-prev-icon']} ${styles['custom-prev-icon']}`}>
+                                <FontAwesomeIcon icon={faChevronLeft} />
+                            </span>
+                        }
+                        nextIcon={
+                            <span className={`${styles['carousel-control-next-icon']} ${styles['custom-next-icon']}`}>
+                                <FontAwesomeIcon icon={faChevronRight} />
+                            </span>
                         }>
                         {videosForModal1.map((videoSrc, index) => (
                             <Carousel.Item key={index}>
@@ -137,7 +170,7 @@ const WeDo = () => {
                                         <source src={videoSrc} type="video/mp4" />
                                         Your browser does not support the video tag.
                                     </video> :
-                                <IframeVideoPlayer videoSrc={videoSrc} key={index} />
+                                    <IframeVideoPlayer videoSrc={videoSrc} key={index} />
                                 }
                             </Carousel.Item>
                         ))}
@@ -150,9 +183,9 @@ const WeDo = () => {
                 <Modal.Header className={styles.modalTitle}>
                     <Modal.Title>
                         Social media content
-                        {/* <AppButton className={`${styles.hrefBtn} btn btn-primary`} onClick={() => handleMailTo('aaron@bluebot.in')}>
+                        <AppButton className={`${styles.hrefBtn} btn btn-primary`} onClick={() => handleMailTo('aaron@bluebot.in')}>
                             Request Video
-                        </AppButton> */}
+                        </AppButton>
                     </Modal.Title>
                     <AppButton variant="transparent" className={styles.btnClose} onClick={handleClose} >
                         <FontAwesomeIcon icon={faClose} className="fa-fw" />
@@ -164,20 +197,20 @@ const WeDo = () => {
                             <FontAwesomeIcon icon={faChevronLeft} />
                         </span>
                     }
-                    nextIcon={
-                        <span className={`${styles['carousel-control-next-icon']} ${styles['custom-next-icon']}`}>
-                            <FontAwesomeIcon icon={faChevronRight} />
-                        </span>
+                        nextIcon={
+                            <span className={`${styles['carousel-control-next-icon']} ${styles['custom-next-icon']}`}>
+                                <FontAwesomeIcon icon={faChevronRight} />
+                            </span>
                         }>
                         {videosForModal2.map((videoSrc, index) => (
                             <Carousel.Item key={index}>
                                 {!videoSrc.includes('https:') ?
-                                <video poster={thumbnailsForModal2[index]} controls muted>
-                                    <source src={videoSrc} type="video/mp4" />
-                                    Your browser does not support the video tag.
-                                </video> :
-                                <IframeVideoPlayer videoSrc={videoSrc} key={index} />
-}
+                                    <video poster={thumbnailsForModal2[index]} controls muted>
+                                        <source src={videoSrc} type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video> :
+                                    <IframeVideoPlayer videoSrc={videoSrc} key={index} />
+                                }
                             </Carousel.Item>
                         ))}
                     </Carousel>
@@ -234,6 +267,7 @@ const WeDo = () => {
                     </div>
                 </Modal.Body>
             </Modal>
+
         </>
     );
 }

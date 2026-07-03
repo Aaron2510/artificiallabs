@@ -5,14 +5,14 @@ import styles from "./award.module.scss";
 
 const Awards = () => {
   const awardsList = [
-    { src: "/Two.jpg", alt: "Two-kyoorius" },
-    { src: "/Mukdeee1.jpg", alt: "mukdeee" },
-    { src: "/Foxglove.png", alt: "foxglove" },
-    { src: "/Maddy.png", alt: "maddy" },
-    { src: "/Mukdeee.png", alt: "mukdeee-kyoorius" },
-    { src: "/Kyoorius1.png", alt: "kyoorius1" },
-    { src: "/Kling.jpg", alt: "kling" },
-    { src: "/Kyoorius2.png", alt: "kyoorius2" }
+    { src: "/awards/Two.jpg", alt: "Two-kyoorius" },
+    { src: "/awards/Mukdeee1.jpg", alt: "mukdeee" },
+    { src: "/awards/Foxglove.png", alt: "foxglove" },
+    { src: "/awards/Maddy.png", alt: "maddy" },
+    { src: "/awards/Mukdeee.png", alt: "mukdeee-kyoorius" },
+    { src: "/awards/Kyoorius1.png", alt: "kyoorius1" },
+    { src: "/awards/Kling.jpg", alt: "kling" },
+    { src: "/awards/Kyoorius2.png", alt: "kyoorius2" }
   ];
 
 //   return (
