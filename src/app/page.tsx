@@ -23,6 +23,7 @@ import TextColorAnim from './components/TextColorAnim';
 import Awards from './components/Awards';
 import LastTagLine from './components/LastTagLine';
 import InTheNews from './components/InTheNews';
+import CelebritySection from './components/CelebritySection';
 // GSAPAnimation
 import FadeIn from './components/FadeIn'
 
@@ -76,6 +77,17 @@ export default function Home() {
       </section>
 
       <section className={`${theme.section} ${styles.section7}`} id="our-clients">
+        <Container>
+          <FadeIn duration={1.5} fadeInUp={true}>
+            {/* <h1 className="titles text-center">Celebrity Work</h1> */}
+          </FadeIn>
+          <FadeIn duration={2} delay={0.5}>
+            <CelebritySection />
+          </FadeIn>
+        </Container>
+      </section>
+
+      <section className={`${theme.section} ${styles.section7}`}>
         <Container>
           <FadeIn duration={1.5} fadeInUp={true}>
             <h1 className="titles text-center">Our Clients</h1>
