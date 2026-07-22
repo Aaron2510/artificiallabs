@@ -15,11 +15,11 @@ type CelebrityItem = {
 };
 
 const celebrityItems: CelebrityItem[] = [
-  { name: "Janhvi Kapoor", subtitle: "Pantene Flat Iron", image: "/celebs/Jhanvi Kapoor.png", link: "https://vimeo.com/1205783321?fl=tl&fe=ec" },
-  { name: "Lulu Hassan", subtitle: "Downy Pure Bliss", image: "/celebs/Lulu Hassan.jpg", link: "https://vimeo.com/1205765297?fl=tl&fe=ec" },
-  { name: "Heidi Klum & Diplo", subtitle: "Red Eye | Germany's Next Top Model", image: "/celebs/Heidi Klum & Diplo.png", link: "https://vimeo.com/1205765298?fl=tl&fe=ec" },
-  { name: "Ajith Kumar", subtitle: "Campa Energy", image: "/celebs/Ajith Kumar.png", link: "https://vimeo.com/1205765295?fl=tl&fe=ec" },
-  { name: "Vicky Kaushal", subtitle: "Appy Fizz | The One The Only", image: "/celebs/Vicky Kaushal.png", link: "https://vimeo.com/1205765296?fl=tl&fe=ec" },
+  { name: "Janhvi Kapoor", subtitle: "Pantene Flat Iron", image: "/celebs/Jhanvi Kapoor.png", link: "https://player.vimeo.com/video/1205783321?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" },
+  { name: "Lulu Hassan", subtitle: "Downy Pure Bliss", image: "/celebs/Lulu Hassan.jpg", link: "https://player.vimeo.com/video/1205765297?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" },
+  { name: "Heidi Klum & Diplo", subtitle: "Red Eye | Germany's Next Top Model", image: "/celebs/Heidi Klum & Diplo.png", link: "https://player.vimeo.com/video/1205765298?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" },
+  { name: "Ajith Kumar", subtitle: "Campa Energy", image: "/celebs/Ajith Kumar.png", link: "https://player.vimeo.com/video/1205765295?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" },
+  { name: "Vicky Kaushal", subtitle: "Appy Fizz | The One The Only", image: "/celebs/Vicky Kaushal.png", link: "https://player.vimeo.com/video/1205765296?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" },
 ];
 
 const CelebritySection = () => {

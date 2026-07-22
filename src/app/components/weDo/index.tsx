@@ -32,9 +32,9 @@ const WeDo = () => {
     // Array of video URLs for carousel
     const videosForModal1 = [
         // "/videos/cocacola.mp4",
-        "/videos/BPL - Trimmer.mp4",
+        "https://player.vimeo.com/video/1204455531?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "/videos/Green Label.mp4",
-        "/videos/Kelvinator - Summer.mp4",
+        "https://player.vimeo.com/video/1204455660?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         "/videos/greenLabel2.mp4",
         "/videos/urbanLadder1.mp4",
         "/videos/urbanLadder2.mp4",
